@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class CHMSDeepMiningView extends React.Component {
+export default class CHMSMessageBoard extends React.Component {
 
     render() {
         return (

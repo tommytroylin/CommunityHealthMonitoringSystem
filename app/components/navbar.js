@@ -1,8 +1,6 @@
 import React from 'react';
 import {Router,Route} from 'react-router';
 import {Nav, Navbar, NavBrand, NavDropdown, NavItem, MenuItem} from 'react-bootstrap';
-require('../static/animate.css');
-
 
 export default class CHMSNavbar extends React.Component {
     constructor(props) {
@@ -40,11 +38,12 @@ export default class CHMSNavbar extends React.Component {
                         <NavItem href="#/">Heat Map</NavItem>
                         <NavItem href="#/rankingList">Ranking List</NavItem>
                         <NavItem href="#/deepMining">Food Deep Analysis</NavItem>
-                        <NavItem href="#/comments">Comments</NavItem>
+                        <NavItem href="#/sentimentAnalysis">Sentiment Analysis</NavItem>
+                        <NavItem href="#/contactUs">Contact Us</NavItem>
                     </Nav>
                     <Nav pullRight>
                         <NavDropdown title="Tommy" id="basic-nav-dropdown">
-                            <MenuItem >My Profile</MenuItem>
+                            <MenuItem >Message Board</MenuItem>
                             <MenuItem divider/>
                             <MenuItem >Log Out</MenuItem>
                         </NavDropdown>
