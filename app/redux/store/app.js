@@ -1,4 +1,9 @@
-import {combineReducers ,createStore } from 'redux';
-import reducer from '../reducers/heat-map';
+import { createStore, applyMiddleware } from 'redux';
+import {reducers} from '../reducers/all-reducers';
+import createLogger from 'redux-logger'
+import thunk from 'redux-thunk';
 
-export const store = createStore(reducer);
+const loggerMiddleware = createLogger();
+
+
+export const store = (applyMiddleware(thunk,loggerMiddleware)(createStore))(reducers);
