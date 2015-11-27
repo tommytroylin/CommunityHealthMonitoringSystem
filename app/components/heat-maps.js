@@ -1,15 +1,12 @@
 import React from 'react';
-import CHMSLogo from './logo'
-import CHMSRollingTwitter from './rolling-twitter'
 import CHMSHeatMap from './reuseable/heat-map'
-import { connect } from 'react-redux';
 import { USAll as mapDataUSAll } from '../utils/map-data-us-all';
 import ApiAddresses from '../utils/api-address';
 import {Highcharts} from 'react-highcharts/bundle/highmaps';
 
-const CHMSHeatMap2Config = {
+const CHMSHeatMap1Config = {
     title: {
-        text: 'Map2'
+        text: 'Heat Map for The Amount of Exercise'
     },
 
     subtitle: {
@@ -78,7 +75,7 @@ const CHMSHeatMap2Config = {
     }, {
         name: 'Separators',
         type: 'mapline',
-        data: Highcharts.geojson(mapDataUSAll,'mapline'),
+        data: Highcharts.geojson(mapDataUSAll, 'mapline'),
         color: 'silver',
         showInLegend: false,
         enableMouseTracking: false
@@ -88,15 +85,9 @@ const CHMSHeatMap2Config = {
 };
 
 
-class CHMSHeatMap2 extends React.Component {
+export class CHMSHeatMap1 extends React.Component {
     render() {
-        return <CHMSHeatMap apiAddress={ApiAddresses.heatMap2} initConfig={CHMSHeatMap2Config} {...this.props} isPureConfig/>
+        return <CHMSHeatMap apiAddress={ApiAddresses.heatMap1} initConfig={CHMSHeatMap1Config} {...this.props}
+                            isPureConfig/>
     }
 }
-
-export default connect((state)=> {
-    return {
-        onState: state.heatMap2.onState,
-        config: state.heatMap2.config
-    }
-})(CHMSHeatMap2)

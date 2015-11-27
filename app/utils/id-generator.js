@@ -51,7 +51,7 @@ export default class IdGenerator {
         this.counter = IdGenerator.increment(this.counter);
         return IdGenerator.resultGenFunc(this.id, this.counter);
     }
-    
+
     now() {
         return this.counter;
     }

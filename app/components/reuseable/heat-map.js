@@ -7,8 +7,9 @@
 import React from 'react';
 import ReactHighmap from 'react-highcharts/bundle/highmaps';
 import * as actions from '../../redux/actions/heat-map';
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import IdGenerator from '../../utils/id-generator';
 
 
 class CHMSHeatMapLoading extends React.Component {
@@ -40,19 +41,22 @@ CHMSHeatMapReload.propTypes = {
 };
 
 
-export default class CHMSHeatMap extends React.Component {
+class CHMSHeatMap extends React.Component {
 
     constructor(props) {
+        console.log(props);
         super(props);
     }
+
     componentDidMount() {
-        this.props.dispatch(actions.initializeConfig(this.props.initConfig))
+        this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig))
     }
 
     render() {
         return (
             <div>
-                <CHMSHeatMapReload handleClick={ ()=> this.props.dispatch(actions.fetchMapData(this.props.apiAddress))}/>
+                <CHMSHeatMapReload
+                    handleClick={ ()=> this.props.dispatch(actions.fetchMapData(this.props.uid,this.props.apiAddress))}/>
                 { this.props.onState === 'FETCHING' ? <CHMSHeatMapLoading/> : null }
                 { this.props.onState === 'ERROR' ? <CHMSHeatMapError /> : null }
                 { this.props.onState === 'DRAWN' ? <ReactHighmap config={this.props.config}/> : null }
@@ -68,3 +72,15 @@ CHMSHeatMap.propTypes = {
     config: React.PropTypes.object.isRequired
 };
 
+
+export default connect((state)=> {
+    const uid = IdGenerator.get('HeatMap').next();
+    if (state.heatMap.heatMaps[uid] === undefined) {
+        state.heatMap.heatMaps[uid] = {}
+    }
+    return {
+        onState: state.heatMap.heatMaps[uid].onState,
+        config: state.heatMap.heatMaps[uid].config,
+        uid
+    }
+})(CHMSHeatMap);

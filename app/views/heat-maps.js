@@ -1,7 +1,7 @@
 import React from 'react';
 import CHMSLogo from '../components/logo'
 import CHMSRollingTwitter from '../components/rolling-twitter'
-import CHMSHeatMap1 from '../components/heat-map1'
+import {CHMSHeatMap1} from '../components/heat-maps'
 import { connect } from 'react-redux';
 import ApiAddresses from '../utils/api-address'
 
@@ -16,7 +16,7 @@ export default class CHMSHeatMapView extends React.Component {
                 <hr/>
                 <CHMSRollingTwitter/>
                 <hr/>
-                <CHMSHeatMap1/>
+                <CHMSHeatMap1 />
             </div>
 
         );
