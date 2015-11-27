@@ -1,6 +1,7 @@
 import * as actionTypes from '../actions/heat-map';
 import Immutable from 'immutable';
 
+
 const onState = {
     fetching: 'FETCHING',
     error: 'ERROR',
@@ -8,20 +9,21 @@ const onState = {
 };
 
 const initialState = {
-    onState: onState.fetching,
-    config: {}
+    heatMaps:{}
 };
 
 
 export default function heatMapReducer(state = initialState, action) {
     let immutableState = Immutable.fromJS(state);
     switch (action.type) {
+        case actionTypes.INITIALIZING:
+            return immutableState.setIn(['heatMaps',action.payload.id], {onState:onState.fetching,config:action.payload.initConfig}).toJS();
         case actionTypes.FETCH_DATA_REQUEST:
-            return immutableState.set('onState', onState.fetching).toObject();
+            return immutableState.setIn(['heatMaps',action.payload.id,'onState'], onState.fetching).toJS();
         case actionTypes.FETCH_DATA_SUCCESS:
-            return immutableState.set('onState', onState.drawn).set('config', action.payload.data).toObject();
+            return immutableState.setIn(['heatMaps',action.payload.id,'onState'], onState.drawn).setIn(['heatMaps',action.payload.id,'config','series',0,'data'],Immutable.fromJS(action.payload.mapData.data)).toJS();
         case actionTypes.FETCH_DATA_FAILURE:
-            return immutableState.set('onState', onState.error).set('config', action.payload.data).toObject();
+            return immutableState.setIn(['heatMaps',action.payload.id,'onState'], onState.error).toJS();
         default:
             return state;
     }
