@@ -2,7 +2,7 @@ import React from 'react';
 import CHMSHeatMap from './reuseable/heat-map'
 import { USAll as mapDataUSAll } from '../utils/map-data-us-all';
 import ApiAddresses from '../utils/api-address';
-import {Highcharts} from 'react-highcharts/bundle/highmaps';
+import { Highcharts } from 'react-highcharts/bundle/highmaps';
 
 const CHMSHeatMap1Config = {
     title: {
