@@ -12,7 +12,7 @@ export default class IdGenerator {
 
     // a function: (previousValue) => nextValue
     static increment(previousValue) {
-        return ++previousValue;
+        return previousValue+=1;
     }
 
     //
@@ -33,8 +33,7 @@ export default class IdGenerator {
     // get a generator by id, init it if can't find it
     static get(id, initValue) {
         if (IdGenerator.__generators.hasOwnProperty(id)) {
-
-            return IdGenerator.__generators.id;
+            return IdGenerator.__generators[id];
         } else {
             return new IdGenerator(id, initValue);
         }
@@ -44,7 +43,11 @@ export default class IdGenerator {
         this.id = id;
         this.initValue = initValue ? initValue : 0;
         this.counter = this.initValue;
-        Object.assign(IdGenerator.__generators, {id: this});
+        this.next = this.next.bind(this);
+        this.now = this.now.bind(this);
+        this.reset = this.reset.bind(this);
+        this.clean = this.clean.bind(this);
+        Object.assign(IdGenerator.__generators, {[id]: this});
     }
 
     next() {
