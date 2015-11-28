@@ -1,0 +1,204 @@
+{
+  "data": [
+    {
+      "hc-key": "us-or",
+      "value": "10"
+    },
+    {
+      "hc-key": "us-wa",
+      "value": "9.0369871285511"
+    },
+    {
+      "hc-key": "us-ut",
+      "value": "7.0462879957202"
+    },
+    {
+      "hc-key": "us-ma",
+      "value": "6.9628643587456"
+    },
+    {
+      "hc-key": "us-wi",
+      "value": "6.8755306813836"
+    },
+    {
+      "hc-key": "us-il",
+      "value": "6.3039066574458"
+    },
+    {
+      "hc-key": "us-ms",
+      "value": "5.7565788551778"
+    },
+    {
+      "hc-key": "us-ia",
+      "value": "5.4769690831075"
+    },
+    {
+      "hc-key": "us-mn",
+      "value": "5.3698505998543"
+    },
+    {
+      "hc-key": "us-mi",
+      "value": "5.2714734111914"
+    },
+    {
+      "hc-key": "us-md",
+      "value": "4.0590694645744"
+    },
+    {
+      "hc-key": "us-mt",
+      "value": "3.9874980750035"
+    },
+    {
+      "hc-key": "us-ny",
+      "value": "3.854890796787"
+    },
+    {
+      "hc-key": "us-pa",
+      "value": "3.186639857982"
+    },
+    {
+      "hc-key": "us-ne",
+      "value": "3.1757909773044"
+    },
+    {
+      "hc-key": "us-ky",
+      "value": "3.0326090864787"
+    },
+    {
+      "hc-key": "us-sc",
+      "value": "3.0306326390932"
+    },
+    {
+      "hc-key": "us-ks",
+      "value": "3.0197117709545"
+    },
+    {
+      "hc-key": "us-in",
+      "value": "2.6086024493376"
+    },
+    {
+      "hc-key": "us-co",
+      "value": "2.4493607749591"
+    },
+    {
+      "hc-key": "us-mo",
+      "value": "2.4055991876775"
+    },
+    {
+      "hc-key": "us-ar",
+      "value": "1.9994337580772"
+    },
+    {
+      "hc-key": "us-nm",
+      "value": "1.8693245320697"
+    },
+    {
+      "hc-key": "us-la",
+      "value": "1.5123897481852"
+    },
+    {
+      "hc-key": "us-va",
+      "value": "1.5179912371791"
+    },
+    {
+      "hc-key": "us-nv",
+      "value": "1.291274607088"
+    },
+    {
+      "hc-key": "us-oh",
+      "value": "1.2693701214943"
+    },
+    {
+      "hc-key": "us-al",
+      "value": "1.2214416553408"
+    },
+    {
+      "hc-key": "us-ak",
+      "value": "1.1449805574474"
+    },
+    {
+      "hc-key": "us-me",
+      "value": "1.1319112649883"
+    },
+    {
+      "hc-key": "us-tn",
+      "value": "1.1307370170748"
+    },
+    {
+      "hc-key": "us-nc",
+      "value": "1.0082936793684"
+    },
+    {
+      "hc-key": "us-ok",
+      "value": "0.95667299756105"
+    },
+    {
+      "hc-key": "us-fl",
+      "value": "0.78206183588996"
+    },
+    {
+      "hc-key": "us-ca",
+      "value": "0.57810155673797"
+    },
+    {
+      "hc-key": "us-ga",
+      "value": "0.56289436688469"
+    },
+    {
+      "hc-key": "us-az",
+      "value": "0.42632568635331"
+    },
+    {
+      "hc-key": "us-tx",
+      "value": "0.40530778942645"
+    },
+    {
+      "hc-key": "us-vt",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-hi",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-wv",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-wy",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-id",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-nh",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-de",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-nj",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-ct",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-ri",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-sd",
+      "value": "0"
+    },
+    {
+      "hc-key": "us-nd",
+      "value": "0"
+    }
+  ]
+}

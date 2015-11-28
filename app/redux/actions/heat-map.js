@@ -54,7 +54,6 @@ export function fetchDataSucceed(id,mapData) {
 export function fetchMapData(id,address) {
     return function (dispatch) {
         //dispatch requireMapData action to set the map in loading state
-        dispatch(requireMapData(id));
         return fetch(address)
             .then(fetchUtil.checkHttpStatus) //check if 404
             .then(fetchUtil.parseJSON)

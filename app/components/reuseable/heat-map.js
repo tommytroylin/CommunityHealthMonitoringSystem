@@ -9,16 +9,17 @@ import ReactHighmap from 'react-highcharts/bundle/highmaps';
 import * as actions from '../../redux/actions/heat-map';
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import IdGenerator from '../../utils/id-generator';
 
 
 class CHMSHeatMapLoading extends React.Component {
+    //TODO Style
     render() {
         return <p>Loading</p>
     }
 }
 
 class CHMSHeatMapError extends React.Component {
+    //TODO Style
     render() {
         return (
             <p>Error</p>
@@ -27,6 +28,7 @@ class CHMSHeatMapError extends React.Component {
 }
 
 class CHMSHeatMapReload extends React.Component {
+    //TODO Style
     render() {
         return (
             <div>
@@ -49,7 +51,8 @@ class CHMSHeatMap extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig))
+        this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig));
+        this.props.dispatch(actions.fetchMapData(this.props.uid, this.props.apiAddress));
     }
 
     render() {
@@ -67,20 +70,20 @@ class CHMSHeatMap extends React.Component {
 }
 
 CHMSHeatMap.propTypes = {
+    dispatch: React.PropTypes.func.isRequired,
+    initConfig: React.PropTypes.object.isRequired,
     apiAddress: React.PropTypes.string.isRequired,
     onState: React.PropTypes.oneOf(['FETCHING', 'ERROR', 'DRAWN']),
     config: React.PropTypes.object.isRequired
 };
 
 
-export default connect((state)=> {
-    const uid = IdGenerator.get('HeatMap').next();
-    if (state.heatMap.heatMaps[uid] === undefined) {
-        state.heatMap.heatMaps[uid] = {}
+export default connect((state, props)=> {
+    if (state.heatMap.heatMaps[props.uid] === undefined) {
+        state.heatMap.heatMaps[props.uid] = {}
     }
     return {
-        onState: state.heatMap.heatMaps[uid].onState,
-        config: state.heatMap.heatMaps[uid].config,
-        uid
+        onState: state.heatMap.heatMaps[props.uid].onState,
+        config: state.heatMap.heatMaps[props.uid].config
     }
 })(CHMSHeatMap);
