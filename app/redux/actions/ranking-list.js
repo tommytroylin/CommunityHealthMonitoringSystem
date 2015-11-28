@@ -1,22 +1,11 @@
-// Actions for component heat-map
+// Actions for component ranking-list
 import fetch from 'isomorphic-fetch';
 import * as fetchUtil from '../../utils/fetch-util';
 
-export const INITIALIZING = 'INITIALIZING_HEAT_MAP';
-export const FETCH_DATA_REQUEST = 'FETCH_DATA_REQUEST_HEAT_MAP';
-export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE_HEAT_MAP';
-export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS_HEAT_MAP';
+export const FETCH_DATA_REQUEST = 'FETCH_DATA_REQUEST_RANKING_LIST';
+export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE_RANKING_LIST';
+export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS_RANKING_LIST';
 
-export function initializeConfig(id,initConfig) {
-    return {
-        type: INITIALIZING,
-        payload: {
-            text: 'Initializing',
-            id,
-            initConfig
-        }
-    }
-}
 
 export function requireMapData(id) {
     return {
@@ -39,25 +28,24 @@ export function fetchDataFailed(id,errorMsg) {
     };
 }
 
-export function fetchDataSucceed(id,mapData) {
+export function fetchDataSucceed(id,listData) {
     return {
         type: FETCH_DATA_SUCCESS,
         payload: {
             text: 'Map Drawn with new map config',
             id,
-            mapData
+            listData
         }
     };
 }
 
-//Async Action for fetching map data and redraw the map
-export function fetchMapData(id,address) {
+//Async Action for fetching list data
+export function fetchListData(id, address) {
     return function (dispatch) {
-        //dispatch requireMapData action to set the map in loading state
         return fetch(address)
             .then(fetchUtil.checkHttpStatus) //check if 404
             .then(fetchUtil.parseJSON)
-            .then(mapData => dispatch(fetchDataSucceed(id,mapData)))
+            .then(listData => dispatch(fetchDataSucceed(id,listData)))
             .catch(error => dispatch(fetchDataFailed(id,error)));
     }
 }
