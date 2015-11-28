@@ -9,38 +9,7 @@ import ReactHighmap from 'react-highcharts/bundle/highmaps';
 import * as actions from '../../redux/actions/heat-map';
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-
-
-class CHMSHeatMapLoading extends React.Component {
-    //TODO Style
-    render() {
-        return <p>Loading</p>
-    }
-}
-
-class CHMSHeatMapError extends React.Component {
-    //TODO Style
-    render() {
-        return (
-            <p>Error</p>
-        )
-    }
-}
-
-class CHMSHeatMapReload extends React.Component {
-    //TODO Style
-    render() {
-        return (
-            <div>
-                <Button bsSize="small" bsStyle="warning" onClick={this.props.handleClick}>Reload HeatMap</Button>
-            </div>
-        );
-    }
-}
-
-CHMSHeatMapReload.propTypes = {
-    handleClick: React.PropTypes.func.isRequired
-};
+import { CHMSComponentError,CHMSComponentLoading,CHMSComponentReloadButton } from './loading-and-error';
 
 
 class CHMSHeatMap extends React.Component {
@@ -58,10 +27,10 @@ class CHMSHeatMap extends React.Component {
     render() {
         return (
             <div>
-                <CHMSHeatMapReload
+                <CHMSComponentReloadButton name={this.props.name}
                     handleClick={ ()=> this.props.dispatch(actions.fetchMapData(this.props.uid,this.props.apiAddress))}/>
-                { this.props.onState === 'FETCHING' ? <CHMSHeatMapLoading/> : null }
-                { this.props.onState === 'ERROR' ? <CHMSHeatMapError /> : null }
+                { this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null }
+                { this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name} /> : null }
                 { this.props.onState === 'DRAWN' ? <ReactHighmap config={this.props.config}/> : null }
             </div>
         );
@@ -70,11 +39,12 @@ class CHMSHeatMap extends React.Component {
 }
 
 CHMSHeatMap.propTypes = {
+    name:React.PropTypes.string.isRequired,
     dispatch: React.PropTypes.func.isRequired,
     initConfig: React.PropTypes.object.isRequired,
     apiAddress: React.PropTypes.string.isRequired,
     onState: React.PropTypes.oneOf(['FETCHING', 'ERROR', 'DRAWN']),
-    config: React.PropTypes.object.isRequired
+    //config: React.PropTypes.object.isRequired
 };
 
 
