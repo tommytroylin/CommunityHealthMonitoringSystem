@@ -1,208 +1,204 @@
 {
   "data": [
     {
-      "hc-key": "us-ma",
-      "value": 0
-    },
-    {
-      "hc-key": "us-wa",
-      "value": 1
-    },
-    {
-      "hc-key": "us-ca",
-      "value": 2
-    },
-    {
-      "hc-key": "us-or",
-      "value": 3
-    },
-    {
-      "hc-key": "us-wi",
-      "value": 4
-    },
-    {
-      "hc-key": "us-me",
-      "value": 5
-    },
-    {
-      "hc-key": "us-mi",
-      "value": 6
-    },
-    {
-      "hc-key": "us-nv",
-      "value": 7
-    },
-    {
-      "hc-key": "us-nm",
-      "value": 8
-    },
-    {
-      "hc-key": "us-co",
-      "value": 9
-    },
-    {
-      "hc-key": "us-wy",
-      "value": 10
-    },
-    {
       "hc-key": "us-ks",
-      "value": 11
-    },
-    {
-      "hc-key": "us-ne",
-      "value": 12
-    },
-    {
-      "hc-key": "us-ok",
-      "value": 13
+      "value": 100
     },
     {
       "hc-key": "us-mo",
-      "value": 14
+      "value": 56.440569722824
     },
     {
-      "hc-key": "us-il",
-      "value": 15
-    },
-    {
-      "hc-key": "us-in",
-      "value": 16
-    },
-    {
-      "hc-key": "us-vt",
-      "value": 17
-    },
-    {
-      "hc-key": "us-ar",
-      "value": 18
-    },
-    {
-      "hc-key": "us-tx",
-      "value": 19
-    },
-    {
-      "hc-key": "us-ri",
-      "value": 20
-    },
-    {
-      "hc-key": "us-al",
-      "value": 21
-    },
-    {
-      "hc-key": "us-ms",
-      "value": 22
-    },
-    {
-      "hc-key": "us-nc",
-      "value": 23
-    },
-    {
-      "hc-key": "us-va",
-      "value": 24
-    },
-    {
-      "hc-key": "us-ia",
-      "value": 25
-    },
-    {
-      "hc-key": "us-md",
-      "value": 26
-    },
-    {
-      "hc-key": "us-de",
-      "value": 27
-    },
-    {
-      "hc-key": "us-pa",
-      "value": 28
-    },
-    {
-      "hc-key": "us-nj",
-      "value": 29
-    },
-    {
-      "hc-key": "us-ny",
-      "value": 30
-    },
-    {
-      "hc-key": "us-id",
-      "value": 31
-    },
-    {
-      "hc-key": "us-sd",
-      "value": 32
-    },
-    {
-      "hc-key": "us-ct",
-      "value": 33
-    },
-    {
-      "hc-key": "us-nh",
-      "value": 34
-    },
-    {
-      "hc-key": "us-ky",
-      "value": 20
-    },
-    {
-      "hc-key": "us-oh",
-      "value": 36
-    },
-    {
-      "hc-key": "us-tn",
-      "value": 37
-    },
-    {
-      "hc-key": "us-wv",
-      "value": 38
-    },
-    {
-      "hc-key": "us-dc",
-      "value": 39
-    },
-    {
-      "hc-key": "us-la",
-      "value": 40
-    },
-    {
-      "hc-key": "us-fl",
-      "value": 65
-    },
-    {
-      "hc-key": "us-ga",
-      "value": 42
-    },
-    {
-      "hc-key": "us-sc",
-      "value": 43
-    },
-    {
-      "hc-key": "us-mn",
-      "value": 79
-    },
-    {
-      "hc-key": "us-mt",
-      "value": 97
-    },
-    {
-      "hc-key": "us-nd",
-      "value": 46
-    },
-    {
-      "hc-key": "us-az",
-      "value": 47
+      "hc-key": "us-or",
+      "value": 49.122742656248
     },
     {
       "hc-key": "us-ut",
-      "value": 48
+      "value": 42.421981962989
     },
     {
-      "hc-key": "us-hi",
-      "value": 49
+      "hc-key": "us-az",
+      "value": 42.292472795351
+    },
+    {
+      "hc-key": "us-nm",
+      "value": 40.828413751176
+    },
+    {
+      "hc-key": "us-ne",
+      "value": 36.632192561414
+    },
+    {
+      "hc-key": "us-ca",
+      "value": 34.488599798178
+    },
+    {
+      "hc-key": "us-ia",
+      "value": 33.805541714829
+    },
+    {
+      "hc-key": "us-wa",
+      "value": 31.422299568868
+    },
+    {
+      "hc-key": "us-tx",
+      "value": 30.501603957659
+    },
+    {
+      "hc-key": "us-wi",
+      "value": 29.957888251242
+    },
+    {
+      "hc-key": "us-nv",
+      "value": 29.145312138796
     },
     {
       "hc-key": "us-ak",
-      "value": 99
+      "value": 28.039795687844
+    },
+    {
+      "hc-key": "us-ok",
+      "value": 27.86993068772
+    },
+    {
+      "hc-key": "us-co",
+      "value": 27.706439671833
+    },
+    {
+      "hc-key": "us-mn",
+      "value": 27.295719225019
+    },
+    {
+      "hc-key": "us-mt",
+      "value": 25.698844904057
+    },
+    {
+      "hc-key": "us-ky",
+      "value": 24.136624028839
+    },
+    {
+      "hc-key": "us-ms",
+      "value": 23.46302270366
+    },
+    {
+      "hc-key": "us-sc",
+      "value": 23.235120179868
+    },
+    {
+      "hc-key": "us-tn",
+      "value": 22.999958556464
+    },
+    {
+      "hc-key": "us-il",
+      "value": 22.015109892176
+    },
+    {
+      "hc-key": "us-fl",
+      "value": 21.53073883787
+    },
+    {
+      "hc-key": "us-oh",
+      "value": 20.696908652851
+    },
+    {
+      "hc-key": "us-ny",
+      "value": 18.838281258161
+    },
+    {
+      "hc-key": "us-in",
+      "value": 18.62159490571
+    },
+    {
+      "hc-key": "us-mi",
+      "value": 18.167200947516
+    },
+    {
+      "hc-key": "us-al",
+      "value": 17.761278597482
+    },
+    {
+      "hc-key": "us-nc",
+      "value": 17.649536020327
+    },
+    {
+      "hc-key": "us-pa",
+      "value": 16.631683139166
+    },
+    {
+      "hc-key": "us-va",
+      "value": 15.418974575877
+    },
+    {
+      "hc-key": "us-ma",
+      "value": 15.215350829502
+    },
+    {
+      "hc-key": "us-ga",
+      "value": 14.843594841148
+    },
+    {
+      "hc-key": "us-ar",
+      "value": 14.402681929116
+    },
+    {
+      "hc-key": "us-md",
+      "value": 12.902650595763
+    },
+    {
+      "hc-key": "us-la",
+      "value": 12.37731491506
+    },
+    {
+      "hc-key": "us-me",
+      "value": 10.364022874473
+    },
+    {
+      "hc-key": "us-vt",
+      "value": 0
+    },
+    {
+      "hc-key": "us-wv",
+      "value": 0
+    },
+    {
+      "hc-key": "us-wy",
+      "value": 0
+    },
+    {
+      "hc-key": "us-de",
+      "value": 0
+    },
+    {
+      "hc-key": "us-ct",
+      "value": 0
+    },
+    {
+      "hc-key": "us-nd",
+      "value": 0
+    },
+    {
+      "hc-key": "us-nj",
+      "value": 0
+    },
+    {
+      "hc-key": "us-nh",
+      "value": 0
+    },
+    {
+      "hc-key": "us-id",
+      "value": 0
+    },
+    {
+      "hc-key": "us-hi",
+      "value": 0
+    },
+    {
+      "hc-key": "us-ri",
+      "value": 0
+    },
+    {
+      "hc-key": "us-sd",
+      "value": 0
     }
   ]
 }
