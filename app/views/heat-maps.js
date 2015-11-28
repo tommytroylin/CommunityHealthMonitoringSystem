@@ -11,9 +11,6 @@ export default class CHMSHeatMapView extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-
-                <CHMSLogo/>
-                <hr/>
                 <CHMSRollingTwitter/>
                 <hr/>
                 <CHMSHeatMap1 />

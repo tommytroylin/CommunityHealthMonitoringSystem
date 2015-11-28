@@ -6,6 +6,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CHMSNavBar from './components/navbar';
+import CHMSLogo from './components/logo';
 import CHMSNavBarRouter from './routers/navbar'
 import CHMSFooter from './components/footer'
 import { Provider } from 'react-redux';
@@ -19,6 +20,8 @@ export default class App extends React.Component {
             <Provider store={store}>
                 <div className="container">
                     <CHMSNavBar />
+                    <CHMSLogo/>
+                    <hr/>
                     {CHMSNavBarRouter}
                     <CHMSFooter />
                 </div>
