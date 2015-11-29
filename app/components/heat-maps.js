@@ -2,7 +2,7 @@ import React from 'react';
 import CHMSHeatMap from './reuseable/highmap'
 import { USAll as mapDataUSAll } from '../utils/map-data-us-all';
 import ApiAddresses from '../utils/api-address';
-
+import $ from 'jquery';
 
 const CHMSHeatMap1Config = {
     title: {
@@ -185,6 +185,83 @@ export class CHMSHeatMap2 extends React.Component {
             <div>
                 <CHMSHeatMap uid={'Heat2'} apiAddress={ApiAddresses.heatMap2}
                              initConfig={CHMSHeatMap2Config} {...this.props}
+                             isPureConfig/>
+
+            </div>
+        );
+
+    }
+}
+
+
+const CHMSClusteringMapConfig = {
+    chart: {
+        spacingBottom: 20
+    },
+    title: {
+        text: 'Clustering Map'
+    },
+
+    legend: {
+        enabled: true
+    },
+
+    plotOptions: {
+        map: {
+            allAreas: false,
+            joinBy: ['hc-key', 'code'],
+            dataLabels: {
+                enabled: true,
+                color: 'white',
+                formatter: function () {
+                    if (this.point.properties && this.point.properties.labelrank.toString() < 5) {
+                        return this.point.properties['iso-a2'];
+                    }
+                },
+                format: null,
+                style: {
+                    fontWeight: 'bold'
+                }
+            },
+            mapData: mapDataUSAll,
+            tooltip: {
+                headerFormat: '',
+                pointFormat: '{point.name}: <b>{series.name}</b>'
+            }
+
+        }
+    },
+
+    series: [{
+        name: 'default',
+        data: $.map(['us-wa', 'us-nm', 'us-ut', 'us-ca', 'us-tn', 'us-id', 'us-az', 'us-wy', 'us-nd', 'us-sd', 'us-ky', 'us-tx', 'us-fl', 'us-ga', 'us-hi', 'us-il', 'us-ar', 'us-mi', 'us-in', 'us-oh', 'us-ny', 'us-vt', 'us-nh', 'us-ma', 'us-ct', 'us-ri', 'us-pa', 'us-nj', 'us-de', 'us-md', 'us-wv', 'us-va', 'us-nc', 'us-tz'], function (code) {
+            return {code: code};
+        })
+    }, {
+        name: 'cluster1',
+        data: $.map(['us-or', 'us-nv', 'us-mt', 'us-co', 'us-wi', 'us-sc'], function (code) {
+            return {code: code};
+        })
+    }, {
+        name: 'cluster2',
+        data: $.map(['us-la', 'us-ms', 'us-ok', 'us-ar', 'us-al', 'us-me'], function (code) {
+            return {code: code};
+        })
+    }, {
+        name: 'cluster3',
+        data: $.map(['us-ak', 'us-ne', 'us-ks', 'us-ia', 'us-mo', 'us-mn'], function (code) {
+            return {code: code};
+        })
+    }]
+}
+
+
+export class CHMSClusteringMap extends React.Component {
+    render() {
+        return (
+            <div>
+                <CHMSHeatMap uid={'clustering'} apiAddress={null}
+                             initConfig={CHMSClusteringMapConfig} {...this.props}
                              isPureConfig/>
 
             </div>

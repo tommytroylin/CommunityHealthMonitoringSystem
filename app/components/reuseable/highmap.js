@@ -14,21 +14,20 @@ import { CHMSComponentError,CHMSComponentLoading,CHMSComponentReloadButton } fro
 
 class CHMSHeatMap extends React.Component {
 
-    constructor(props) {
-        console.log(props);
-        super(props);
-    }
-
     componentDidMount() {
+
         this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig));
-        this.props.dispatch(actions.fetchMapData(this.props.uid, this.props.apiAddress));
+        if(this.props.apiAddress!==null) {
+            this.props.dispatch(actions.fetchMapData(this.props.uid, this.props.apiAddress));
+        }
+
     }
 
     render() {
         return (
             <div>
                 <CHMSComponentReloadButton name={this.props.name}
-                    handleClick={ ()=> this.props.dispatch(actions.fetchMapData(this.props.uid,this.props.apiAddress))}/>
+                    handleClick={ ()=> this.props.apiAddress!==null?this.props.dispatch(actions.fetchMapData(this.props.uid,this.props.apiAddress)):null}/>
                 { this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null }
                 { this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name} /> : null }
                 { this.props.onState === 'DRAWN' ? <ReactHighmap config={this.props.config}/> : null }
