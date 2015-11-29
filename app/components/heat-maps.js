@@ -1,8 +1,8 @@
 import React from 'react';
-import CHMSHeatMap from './reuseable/heat-map'
+import CHMSHeatMap from './reuseable/highmap'
 import { USAll as mapDataUSAll } from '../utils/map-data-us-all';
 import ApiAddresses from '../utils/api-address';
-import { Highcharts } from 'react-highcharts/bundle/highmaps';
+
 
 const CHMSHeatMap1Config = {
     title: {
@@ -155,7 +155,7 @@ const CHMSHeatMap2Config = {
     }, {
         name: 'Separators',
         type: 'mapline',
-        data: Highcharts.geojson(mapDataUSAll, 'mapline'),
+        data: window.Highcharts.geojson(mapDataUSAll, 'mapline'),
         color: 'silver',
         showInLegend: false,
         enableMouseTracking: false

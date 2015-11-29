@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import ReactHighmap from 'react-highcharts/bundle/highmaps';
+import ReactHighmap from 'react-highcharts/dist/highmaps';
 import * as actions from '../../redux/actions/heat-map';
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
