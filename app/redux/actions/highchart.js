@@ -7,7 +7,7 @@ export const FETCH_DATA_REQUEST = 'FETCH_DATA_REQUEST_HIGHCHARTS';
 export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE_HIGHCHARTS';
 export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS_HIGHCHARTS';
 
-export function initializeConfig(id,initConfig) {
+export function initializeConfig(id, initConfig) {
     return {
         type: INITIALIZING,
         payload: {
@@ -27,7 +27,7 @@ export function requireChartData(id) {
         }
     };
 }
-export function fetchDataFailed(id,errorMsg) {
+export function fetchDataFailed(id, errorMsg) {
     return {
         type: FETCH_DATA_FAILURE,
         payload: {
@@ -39,7 +39,7 @@ export function fetchDataFailed(id,errorMsg) {
     };
 }
 
-export function fetchDataSucceed(id,chartConfig) {
+export function fetchDataSucceed(id, chartConfig) {
     return {
         type: FETCH_DATA_SUCCESS,
         payload: {
@@ -51,12 +51,23 @@ export function fetchDataSucceed(id,chartConfig) {
 }
 
 //Async Action for fetching list data
-export function fetchChartData(id, address) {
+export function fetchChartData(id, address, withData) {
     return function (dispatch) {
-        return fetch(address)
+        let options = {};
+        if (withData !== undefined) {
+            options = {
+                method: 'post', //post
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(withData)
+            }
+        }
+        return fetch(address,options)
             .then(fetchUtil.checkHttpStatus) //check if 404
             .then(fetchUtil.parseJSON)
-            .then(chartConfig => dispatch(fetchDataSucceed(id,chartConfig)))
-            .catch(error => dispatch(fetchDataFailed(id,error)));
+            .then(chartConfig => dispatch(fetchDataSucceed(id, chartConfig)))
+            .catch(error => dispatch(fetchDataFailed(id, error)));
     }
 }

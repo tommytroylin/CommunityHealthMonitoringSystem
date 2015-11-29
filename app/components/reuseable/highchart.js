@@ -10,23 +10,28 @@ import * as actions from '../../redux/actions/highchart';
 import { connect } from 'react-redux';
 import { CHMSComponentError,CHMSComponentLoading,CHMSComponentReloadButton } from './loading-and-error';
 
-
 class Highchart extends React.Component {
 
     constructor(props) {
         super(props);
+        this.updateChart = this.updateChart.bind(this);
     }
 
     componentDidMount() {
         this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig));
-        this.props.dispatch(actions.fetchChartData(this.props.uid, this.props.apiAddress));
+        this.updateChart();
+
+    }
+
+    updateChart() {
+        return this.props.dispatch(actions.fetchChartData(this.props.uid, this.props.apiAddress, this.props.optionData));
     }
 
     render() {
         return (
             <div>
                 <CHMSComponentReloadButton name={this.props.name}
-                                           handleClick={ ()=> this.props.dispatch(actions.fetchChartData(this.props.uid,this.props.apiAddress))}/>
+                                           handleClick={this.updateChart}/>
                 { this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null }
                 { this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name}/> : null }
                 { this.props.onState === 'DRAWN' ? <ReactHighcharts config={this.props.config}/> : null }
@@ -42,6 +47,7 @@ Highchart.propTypes = {
     initConfig: React.PropTypes.object.isRequired,
     apiAddress: React.PropTypes.string.isRequired,
     onState: React.PropTypes.oneOf(['FETCHING', 'ERROR', 'DRAWN']),
+    optionData: React.PropTypes.object,
     //config: React.PropTypes.object.isRequired
 };
 
