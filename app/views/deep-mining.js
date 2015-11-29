@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col, Well } from 'react-bootstrap';
 import {CHMSClusteringMap} from '../components/heat-maps';
+import {CHMSNutrientBarChart} from '../components/charts';
 
 export default class CHMSDeepMiningView extends React.Component {
 
@@ -17,6 +18,12 @@ export default class CHMSDeepMiningView extends React.Component {
                         <h3>Obesity</h3>
                         <Well><img src={require('../static/obesity_by_county.png')} alt="" className="img-responsive"/></Well>
                     </Col>
+
+                </Row>
+                <Row>
+                    <Well>
+                        <CHMSNutrientBarChart/>
+                    </Well>
                 </Row>
             </div>
         );
