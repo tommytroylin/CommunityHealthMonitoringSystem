@@ -4,21 +4,9 @@ import * as apiAddress from '../utils/api-address'
 
 export default class CHMSContactUsView extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-    }
-
-    componentDidMount() {
-        console.log(this.refs)
-
-    }
-
     render() {
         return (
             <div>
-
-
                 <Row>
                     <Col xs={12}>
                         <Panel header={<h3>Contact Information</h3>}>
@@ -48,24 +36,15 @@ export default class CHMSContactUsView extends React.Component {
                                                 className="glyphicon glyphicon-envelope"/>
                                                 xushiyue121@gmail.com</a></ListGroupItem>
                                         </ListGroup>
-
                                     </Col>
                                     <Col xs={12} md={6} mdPull={6}>
                                         <ListGroup>
-                                            <ListGroupItem header="Where are we" bsStyle="info"/>
+                                            <ListGroupItem header="Where Are We" bsStyle="info"/>
                                             <ListGroupItem>
-                                                <iframe width="100%" height="352"
-                                                        src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
-
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97009.53151095942!2d-74.53413255468554!3d40.55157730273884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3b883547b41d5%3A0xb69acf5061471d78!2sPiscataway+Township%2C+NJ!5e0!3m2!1sen!2sus!4v1448838523245" width="100%" height="352" frameBorder="0" style={{border:0}} allowFullScreen></iframe>
                                             </ListGroupItem>
-
                                         </ListGroup>
-
-
                                     </Col>
-                                </Row>
-                                <Row>
-
                                 </Row>
                             </Grid>
                         </Panel>
