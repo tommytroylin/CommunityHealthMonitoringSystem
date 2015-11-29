@@ -23,8 +23,8 @@ export default class CHMSMessageBoardView extends React.Component {
             <div>
                 <Grid fluid>
                     <Row>
-                        <Col xs={12}>
-                            <Panel header={ <h3>Contact Form</h3>}>
+                        <Col xs={12} md={10} mdPush={1} lg={8} lgPush={2}>
+                            <Panel header={ <h3>Leave a message</h3>}>
                                 <Grid fluid>
                                     <Row>
                                         <Col xs={12}>
