@@ -43,13 +43,12 @@ export default class CHMSNavbar extends React.Component {
                     </Nav>
                     <Nav pullRight>
                         <NavDropdown title="Tommy" id="basic-nav-dropdown">
-                            <MenuItem >Message Board</MenuItem>
+                            <MenuItem href="#/messageBoard">Message Board</MenuItem>
                             <MenuItem divider/>
                             <MenuItem >Log Out</MenuItem>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
-
             </Navbar>
         );
     }

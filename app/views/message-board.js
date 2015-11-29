@@ -1,11 +1,55 @@
 import React from 'react';
+import MessageBoard from '../components/messges';
+import {Panel,Grid,Row,Col,Input,Button} from 'react-bootstrap';
 
+export default class CHMSMessageBoardView extends React.Component {
 
-export default class CHMSMessageBoard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.addMessage = this.addMessage.bind(this);
+        this.reset = this.reset.bind(this);
+    }
+
+    addMessage(username) {
+        this.refs.messageBoard.addMessage(username, this.refs.content.getValue())
+    }
+
+    reset() {
+        this.refs.content.getInputDOMNode().value = "";
+    }
 
     render() {
         return (
-            <h1>Here is deepMining</h1>
+            <div>
+                <Grid fluid>
+                    <Row>
+                        <Col xs={12}>
+                            <Panel header={ <h3>Contact Form</h3>}>
+                                <Grid fluid>
+                                    <Row>
+                                        <Col xs={12}>
+                                            <Input ref="content" type="textarea" label="Your Message"
+                                                   placeholder="..."/>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs={12}>
+                                            <div className="pull-right">
+                                                <Button bsStyle="danger" bsSize="small" onClick={this.reset}>Reset</Button>
+                                                <Button bsStyle="success" bsSize="small"
+                                                        onClick={()=>this.addMessage("Tommy")}>Post</Button>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Grid>
+                            </Panel>
+                        </Col>
+                    </Row>
+                    <hr />
+                    <MessageBoard ref="messageBoard"/>
+                </Grid>
+            </div>
+
         );
     }
 
