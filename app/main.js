@@ -23,6 +23,7 @@ export default class App extends React.Component {
                     <CHMSLogo/>
                     <hr/>
                     {CHMSNavBarRouter}
+                    <hr/>
                     <CHMSFooter />
                 </div>
             </Provider>
