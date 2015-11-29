@@ -10,9 +10,12 @@ export default class CHMSMessageBoard extends React.Component {
         super(props);
         this.state = {
             messages: Immutable.List([
-                {username: "Shiyue XU", content: "Test1"},
-                {username: "Shiyue XU", content: "Test2"},
-                {username: "Shiyue XU", content: "Test3"}
+                {username: "Chengguang Xu", content: "Hello everyone!"},
+                {username: "Ziye Sang", content: "Good to see you:)"},
+                {username: "Mengzhu Li", content: "Now you find this."},
+                {username: "Xuan Yu", content: "This is our message board."},
+                {username: "Yanyi Zhang", content: "You can communicate with each other via this."},
+                {username: "Shiyue Xu", content: "Hope you like our system."}
             ])
         };
 
@@ -28,11 +31,12 @@ export default class CHMSMessageBoard extends React.Component {
 
     render() {
         const messages = this.state.messages;
+        const styles = ["success","warning","danger","info","default","primary"];
         return (
             <Row>
                 <Col xs={12} md={10} mdPush={1} lg={8} lgPush={2}>
-                    {messages.reverse().map(message=>
-                        <Panel header={<h3>{message.username}</h3>} bsStyle="success"
+                    {messages.reverse().map((message,index)=>
+                        <Panel header={<h3>{message.username}</h3>} bsStyle={styles[index%6]}
                                key={message.username+message.content}>
                             <p>{message.content}</p>
                         </Panel>
