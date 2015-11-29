@@ -1,0 +1,60 @@
+{
+  "xAxis": [
+    "30",
+    "31",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "data": [
+    {
+      "data": [
+        2190,
+        1968,
+        2712,
+        1348,
+        3610,
+        5262,
+        3461,
+        3610
+      ],
+      "name": "football",
+      "zoneAxis": "x",
+      "zones": [
+        {
+          "value": 6
+        },
+        {
+          "dashStyle": "dot"
+        }
+      ],
+      "pointPlacement": "on"
+    },
+    {
+      "data": [
+        1599,
+        768,
+        1056,
+        442,
+        901,
+        675,
+        826,
+        901
+      ],
+      "name": "soccer",
+      "zoneAxis": "x",
+      "zones": [
+        {
+          "value": 6
+        },
+        {
+          "dashStyle": "dot"
+        }
+      ],
+      "pointPlacement": "on"
+    }
+  ]
+}

@@ -4,8 +4,9 @@
 import React from 'react';
 
 import StateSelect from '../components/subcomponents/state-select';
+import SportSelect from '../components/subcomponents/sport-select';
 import { CHMSFoodRankList,CHMSSportRankList } from '../components/ranking-lists';
-import { CHMSFoodWebChart,CHMSSportBarChart } from '../components/charts';
+import { CHMSFoodWebChart,CHMSSportBarChart, CHMSStateExerciseChart,CHMSSportExerciseChart } from '../components/charts';
 import { Grid, Row, Col, Well } from 'react-bootstrap';
 export default class CHMSRangkingListView extends React.Component {
 
@@ -25,17 +26,20 @@ export default class CHMSRangkingListView extends React.Component {
                 <Row>
                     <Col xs={12} sm={6}>
                         <h3>About food</h3>
-                        <StateSelect/>
                         <Well><CHMSFoodWebChart /></Well>
                     </Col>
                     <Col xs={12} sm={6}>
                         <h3>About sport</h3>
-                        <StateSelect/>
                         <Well><CHMSSportBarChart /></Well>
                     </Col>
                 </Row>
                 <Row>
-
+                    <Col xs={12}>
+                        <Well><CHMSStateExerciseChart /></Well>
+                    </Col>
+                    <Col xs={12}>
+                        <Well><CHMSSportExerciseChart /></Well>
+                    </Col>
                 </Row>
             </div>
         );

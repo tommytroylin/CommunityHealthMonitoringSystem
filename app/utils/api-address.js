@@ -5,6 +5,12 @@ export default {
 
     foodRankList: '/mock/foodRankingList.json',
     sportRankList: '/mock/sportRankingList.json',
+
     foodWebChart: '/mock/foodWebChart.json',
+    sportBarChart:'/mock/sportBarChart.json',
+
+    stateExerciseChart: '/mock/stateExerciseChart.json',
+    sportExerciseChart:'mock/sportExerciseChart.json',
+
     contactUsForm: '/mock/foodWebChart.json',
 };
