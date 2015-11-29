@@ -19,12 +19,15 @@ class Highchart extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState) {
 
-        return this.props.onState !== nextProps.onState || this.props.config !== nextProps.config  ;
+        return this.props.onState !== nextProps.onState || this.props.config !== nextProps.config;
     }
 
     componentDidMount() {
         this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig));
-        this.updateChart(this.props.initOptionData);
+        if (this.props.apiAddress !== null) {
+            this.updateChart(this.props.initOptionData);
+        }
+
 
     }
 
@@ -67,4 +70,4 @@ export default connect((state, props)=> {
         onState: state.highchart.highcharts[props.uid].onState,
         config: state.highchart.highcharts[props.uid].config
     }
-},undefined,undefined,{ withRef: true })(Highchart);
+}, undefined, undefined, {withRef: true})(Highchart);
