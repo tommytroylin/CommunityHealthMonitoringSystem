@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button,ButtonGroup} from 'react-bootstrap';
-import CHMSSelectAndUpdate from '../reuseable/select-and-update';
+import CHMSSelect from '../reuseable/select';
 
 //Change options settings here
 //
@@ -45,13 +45,20 @@ const settings = {
         {value: 'us-WA', label: 'Washington'},
         {value: 'us-WI', label: 'Wisconsin'}
     ],
-    defaultValue:'us-UT'
+    defaultValue:'us-AL'
 };
 
 export default class CHMSStateSelect extends React.Component {
+    constructor(props) {
+        super(props);
+        this.getSelectValue = this.getSelectValue.bind(this);
+    }
+    getSelectValue(){
+        return this.refs.select.getSelectValue()
+    }
     render() {
         return (
-            <CHMSSelectAndUpdate {...this.props} {...settings}/>
+            <CHMSSelect ref="select" {...this.props} {...settings}/>
         );
     }
 };

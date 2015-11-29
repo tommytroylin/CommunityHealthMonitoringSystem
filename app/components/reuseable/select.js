@@ -2,26 +2,32 @@ import React from 'react';
 import {Button,ButtonGroup} from 'react-bootstrap';
 import _ from 'lodash';
 
-export default class CHMSSelectAndUpdate extends React.Component {
+export default class CHMSSelect extends React.Component {
+    constructor(props) {
+        super(props);
+        this.getSelectValue = this.getSelectValue.bind(this);
+    }
+    getSelectValue(){
+        console.log(this.refs);
+         return this.refs.select.value;
+    }
     render() {
 
         return (
-            <div className="form-group">
+            <span>
                 <label>{this.props.label}</label>
-                <select defaultValue={this.props.defaultValue}>
+                <select defaultValue={this.props.defaultValue} ref="select">
                     {_.map(this.props.options, option =>
                         <option value={option.value} key={option.value+'.'+option.label}>{option.label}</option>
                     )}
                 </select>
-                <Button onClick={this.props.updateOnClick}>Update</Button>
-            </div>
+            </span>
 
         );
     }
 };
 
-CHMSSelectAndUpdate.propTypes = {
+CHMSSelect.propTypes = {
     label: React.PropTypes.string.isRequired,
-    options: React.PropTypes.arrayOf(React.PropTypes.object),
-    updateOnClick: React.PropTypes.func.isRequired
+    options: React.PropTypes.arrayOf(React.PropTypes.object)
 };
