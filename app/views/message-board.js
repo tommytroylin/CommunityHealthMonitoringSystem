@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageBoard from '../components/messges';
+import MessageBoard from '../components/message-board';
 import {Panel,Grid,Row,Col,Input,Button} from 'react-bootstrap';
 
 export default class CHMSMessageBoardView extends React.Component {
