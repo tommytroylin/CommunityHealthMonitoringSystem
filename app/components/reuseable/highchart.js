@@ -17,21 +17,28 @@ class Highchart extends React.Component {
         this.updateChart = this.updateChart.bind(this);
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+
+        return this.props.onState !== nextProps.onState || this.props.config !== nextProps.config  ;
+    }
+
     componentDidMount() {
         this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig));
-        this.updateChart();
+        this.updateChart(this.props.initOptionData);
 
     }
 
-    updateChart() {
-        return this.props.dispatch(actions.fetchChartData(this.props.uid, this.props.apiAddress, this.props.optionData));
+    updateChart(data) {
+        this.currentOptionData = data;
+        this.props.dispatch(actions.fetchChartData(this.props.uid, this.props.apiAddress, data));
+
     }
 
     render() {
         return (
             <div>
                 <CHMSComponentReloadButton name={this.props.name}
-                                           handleClick={this.updateChart}/>
+                                           handleClick={() => this.updateChart(this.currentOptionData)}/>
                 { this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null }
                 { this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name}/> : null }
                 { this.props.onState === 'DRAWN' ? <ReactHighcharts config={this.props.config}/> : null }
@@ -47,7 +54,7 @@ Highchart.propTypes = {
     initConfig: React.PropTypes.object.isRequired,
     apiAddress: React.PropTypes.string.isRequired,
     onState: React.PropTypes.oneOf(['FETCHING', 'ERROR', 'DRAWN']),
-    optionData: React.PropTypes.object,
+    initOptionData: React.PropTypes.object,
     //config: React.PropTypes.object.isRequired
 };
 
@@ -60,4 +67,4 @@ export default connect((state, props)=> {
         onState: state.highchart.highcharts[props.uid].onState,
         config: state.highchart.highcharts[props.uid].config
     }
-})(Highchart);
+},undefined,undefined,{ withRef: true })(Highchart);
