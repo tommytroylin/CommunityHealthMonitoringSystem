@@ -28,7 +28,8 @@ module.exports = {
             {from:'node_modules/jquery/dist/jquery.min.js',to:'lib/jquery.min.js'},
             {from:'node_modules/highcharts-release/highcharts.js',to:'lib/highcharts.js'},
             {from:'node_modules/highcharts-release/highcharts-more.js',to:'lib/highcharts-more.js'},
-            {from:'node_modules/highmaps-release/modules/map.js',to:'lib/map.js'}
+            {from:'node_modules/highmaps-release/modules/map.js',to:'lib/map.js'},
+            {from:'node_modules/jquery-knob/dist/jquery.knob.min.js',to:'lib/jquery.knob.min.js'},
         ])
     ]
 };

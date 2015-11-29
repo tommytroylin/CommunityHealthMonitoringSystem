@@ -7,6 +7,7 @@ import CHMSRankingListView from '../views/ranking-list';
 import CHMSDeepMiningView from '../views/deep-mining';
 import CHMSMessageBoardView from '../views/message-board';
 import CHMSSentimentAnalysisView from '../views/sentiment-analysis';
+import CHMSMyProfileView from '../views/my-profile';
 
 export default (
     <Router>
@@ -18,6 +19,7 @@ export default (
             <Route path="sentimentAnalysis" component={CHMSSentimentAnalysisView}/>
             <Route path="contactUs" component={CHMSContactUsViews}/>
             <Route path="messageBoard" component={CHMSMessageBoardView}/>
+            <Route path="myProfile" component={CHMSMyProfileView}/>
         </Route>
     </Router>
 );
