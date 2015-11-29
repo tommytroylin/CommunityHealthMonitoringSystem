@@ -32,7 +32,7 @@ export default class CHMSMessageBoard extends React.Component {
         return (
             <div>
                 {messages.reverse().map(message=>
-                    <Panel header={<h3>{message.username}</h3>} bsStyle="success">
+                    <Panel header={<h3>{message.username}</h3>} bsStyle="success" key={message.username+message.content}>
                         <p>{message.content}</p>
                     </Panel>
                 )}
