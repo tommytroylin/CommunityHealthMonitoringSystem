@@ -13,7 +13,6 @@ import _ from 'lodash';
 
 class CHMSRankingListList extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {
-        console.log(this.props.listData !== nextProps.listData);
         return this.props.listData !== nextProps.listData;
     }
 
@@ -50,7 +49,8 @@ class CHMSRankingList extends React.Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(actions.fetchListData(this.props.uid, this.props.apiAddress));
+            this.props.dispatch(actions.fetchListData(this.props.uid, this.props.apiAddress));
+
     }
 
 
@@ -74,7 +74,7 @@ CHMSRankingList.propTypes = {
     dispatch: React.PropTypes.func.isRequired,
     apiAddress: React.PropTypes.string.isRequired,
     onState: React.PropTypes.oneOf(['FETCHING', 'ERROR', 'DRAWN']).isRequired,
-    listData: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
+    //listData: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
 };
 
 

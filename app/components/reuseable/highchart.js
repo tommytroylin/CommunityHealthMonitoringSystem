@@ -18,23 +18,20 @@ class Highchart extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-
         return this.props.onState !== nextProps.onState || this.props.config !== nextProps.config;
     }
 
     componentDidMount() {
         this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig));
-        if (this.props.apiAddress !== null) {
-            this.updateChart(this.props.initOptionData);
-        }
-
+        this.updateChart(this.props.initOptionData);
 
     }
 
     updateChart(data) {
         this.currentOptionData = data;
-        this.props.dispatch(actions.fetchChartData(this.props.uid, this.props.apiAddress, data));
-
+        if (this.props.apiAddress !== null) {
+            this.props.dispatch(actions.fetchChartData(this.props.uid, this.props.apiAddress, data));
+        }
     }
 
     render() {
