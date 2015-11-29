@@ -8,7 +8,6 @@ export default class CHMSSelect extends React.Component {
         this.getSelectValue = this.getSelectValue.bind(this);
     }
     getSelectValue(){
-        console.log(this.refs);
          return this.refs.select.value;
     }
     render() {

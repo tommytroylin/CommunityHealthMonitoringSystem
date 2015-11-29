@@ -17,7 +17,7 @@ class CHMSHeatMap extends React.Component {
     componentDidMount() {
 
         this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig));
-        if(this.props.apiAddress!==null) {
+        if (this.props.apiAddress !== null) {
             this.props.dispatch(actions.fetchMapData(this.props.uid, this.props.apiAddress));
         }
 
