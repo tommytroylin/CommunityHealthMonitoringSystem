@@ -1,6 +1,6 @@
 import React from 'react';
 import CHMSHeatMap from './reuseable/highmap'
-import { USAll as mapDataUSAll } from '../utils/map-data-us-all';
+import {USAll as mapDataUSAll} from '../utils/map-data-us-all';
 import ApiAddresses from '../utils/api-address';
 import $ from 'jquery';
 
@@ -84,6 +84,21 @@ const CHMSHeatMap1Config = {
 
 };
 
+export class CHMSHeatMap1 extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <CHMSHeatMap uid={'Heat1'} apiAddress={ApiAddresses.heatMap1}
+                             initConfig={CHMSHeatMap1Config} {...this.props}
+                             isPureConfig/>
+
+            </div>
+        );
+    }
+
+}
+
 const CHMSHeatMap2Config = {
     title: {
         text: 'Heat Map for The Amount of Junk Food'
@@ -164,22 +179,8 @@ const CHMSHeatMap2Config = {
 
 };
 
-export class CHMSHeatMap1 extends React.Component {
-    render() {
-        return (
-            <div>
-                <CHMSHeatMap uid={'Heat1'} apiAddress={ApiAddresses.heatMap1}
-                             initConfig={CHMSHeatMap1Config} {...this.props}
-                             isPureConfig/>
-
-            </div>
-        );
-
-    }
-}
-
-
 export class CHMSHeatMap2 extends React.Component {
+
     render() {
         return (
             <div>
@@ -189,10 +190,9 @@ export class CHMSHeatMap2 extends React.Component {
 
             </div>
         );
-
     }
-}
 
+}
 
 const CHMSClusteringMapConfig = {
     chart: {
@@ -255,8 +255,8 @@ const CHMSClusteringMapConfig = {
     }]
 }
 
-
 export class CHMSClusteringMap extends React.Component {
+
     render() {
         return (
             <div>
@@ -266,6 +266,28 @@ export class CHMSClusteringMap extends React.Component {
 
             </div>
         );
+    }
+
+}
+
+const CHMSSentimentAnalysisMapConfig = {
+
+};
+
+export class CHMSSentimentAnalysisMap extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <CHMSHeatMap uid={'sentimentAnalysis'} apiAddress={null}
+                             initConfig={CHMSSentimentAnalysisMapConfig} {...this.props}
+                             isPureConfig/>
+
+            </div>
+        );
 
     }
+
 }
+
+//TODO All maps are here

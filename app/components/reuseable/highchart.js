@@ -1,4 +1,4 @@
-// HighcharsReact wrapper
+// Highchars React wrapper
 
 /**
  * Created by Tommy on 11/25/15.
@@ -7,8 +7,8 @@
 import React from 'react';
 import ReactHighcharts from 'react-highcharts';
 import * as actions from '../../redux/actions/highchart';
-import { connect } from 'react-redux';
-import { CHMSComponentError,CHMSComponentLoading,CHMSComponentReloadButton } from './loading-and-error';
+import {connect} from 'react-redux';
+import {CHMSComponentError, CHMSComponentLoading, CHMSComponentReloadButton} from './loading-and-error';
 
 class Highchart extends React.Component {
 
@@ -39,9 +39,9 @@ class Highchart extends React.Component {
             <div>
                 <CHMSComponentReloadButton name={this.props.name}
                                            handleClick={() => this.updateChart(this.currentOptionData)}/>
-                { this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null }
-                { this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name}/> : null }
-                { this.props.onState === 'DRAWN' ? <ReactHighcharts config={this.props.config}/> : null }
+                {this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null}
+                {this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name}/> : null}
+                {this.props.onState === 'DRAWN' ? <ReactHighcharts config={this.props.config}/> : null}
             </div>
         );
     }

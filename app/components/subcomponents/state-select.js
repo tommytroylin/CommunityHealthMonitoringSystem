@@ -2,8 +2,7 @@ import React from 'react';
 import {Button,ButtonGroup} from 'react-bootstrap';
 import CHMSSelect from '../reuseable/select';
 
-//Change options settings here
-//
+//TODO Change the options here
 const settings = {
     options: [
         {value: 'us-AL', label: 'Alabama'},
@@ -45,22 +44,26 @@ const settings = {
         {value: 'us-WA', label: 'Washington'},
         {value: 'us-WI', label: 'Wisconsin'}
     ],
-    defaultValue:'us-AL'
+    defaultValue: 'us-AL'
 };
 
 export default class CHMSStateSelect extends React.Component {
+
     constructor(props) {
         super(props);
         this.getSelectValue = this.getSelectValue.bind(this);
     }
-    getSelectValue(){
+
+    getSelectValue() {
         return this.refs.select.getSelectValue()
     }
+
     render() {
         return (
             <CHMSSelect ref="select" {...this.props} {...settings}/>
         );
     }
+
 };
 
 CHMSStateSelect.propTypes = {

@@ -3,6 +3,7 @@ import {Router,Route} from 'react-router';
 import {Nav, Navbar, NavBrand, NavDropdown, NavItem, MenuItem} from 'react-bootstrap';
 
 export default class CHMSNavbar extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -14,13 +15,11 @@ export default class CHMSNavbar extends React.Component {
     }
 
     showFullBrand() {
-        this.setState({isFullBrandShown: true})
-
+        this.setState({isFullBrandShown: true});
     }
 
     hideFullBrand() {
-        this.setState({isFullBrandShown: false})
-
+        this.setState({isFullBrandShown: false});
     }
 
     render() {
@@ -56,4 +55,4 @@ export default class CHMSNavbar extends React.Component {
 
 }
 
-//TODO handle login
+//TODO Handle login

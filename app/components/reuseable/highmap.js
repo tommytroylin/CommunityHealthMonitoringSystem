@@ -7,30 +7,28 @@
 import React from 'react';
 import ReactHighmap from 'react-highcharts/dist/highmaps';
 import * as actions from '../../redux/actions/heat-map';
-import { Button } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { CHMSComponentError,CHMSComponentLoading,CHMSComponentReloadButton } from './loading-and-error';
+import {Button} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {CHMSComponentError, CHMSComponentLoading, CHMSComponentReloadButton} from './loading-and-error';
 
 
 class CHMSHeatMap extends React.Component {
 
     componentDidMount() {
-
         this.props.dispatch(actions.initializeConfig(this.props.uid, this.props.initConfig));
         if (this.props.apiAddress !== null) {
             this.props.dispatch(actions.fetchMapData(this.props.uid, this.props.apiAddress));
         }
-
     }
 
     render() {
         return (
             <div>
                 <CHMSComponentReloadButton name={this.props.name}
-                    handleClick={ ()=> this.props.apiAddress!==null?this.props.dispatch(actions.fetchMapData(this.props.uid,this.props.apiAddress)):null}/>
-                { this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null }
-                { this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name} /> : null }
-                { this.props.onState === 'DRAWN' ? <ReactHighmap config={this.props.config}/> : null }
+                    handleClick={()=> this.props.apiAddress!==null?this.props.dispatch(actions.fetchMapData(this.props.uid,this.props.apiAddress)):null}/>
+                {this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null}
+                {this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name} /> : null}
+                {this.props.onState === 'DRAWN' ? <ReactHighmap config={this.props.config}/> : null}
             </div>
         );
     }

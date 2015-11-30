@@ -4,6 +4,7 @@
 import React from 'react';
 import {Panel,Col,Row} from 'react-bootstrap';
 import Immutable from 'immutable';
+
 export default class CHMSMessageBoard extends React.Component {
 
     constructor(props) {

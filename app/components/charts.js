@@ -52,6 +52,7 @@ const CHMSFoodWebChartConfig = {
 };
 
 export class CHMSFoodWebChart extends React.Component {
+
     render() {
         const callback = () => {
             this.refs.chart.getWrappedInstance().updateChart({data: {choice: this.refs.state1.getSelectValue()}});
@@ -74,8 +75,8 @@ export class CHMSFoodWebChart extends React.Component {
                 </Row>
             </div>
         );
-
     }
+
 }
 
 const CHMSSportBarChartConfig = {
@@ -124,6 +125,7 @@ const CHMSSportBarChartConfig = {
 };
 
 export class CHMSSportBarChart extends React.Component {
+
     render() {
         const callback = () => {
             this.refs.chart.getWrappedInstance().updateChart({data: {choice: this.refs.state1.getSelectValue()}});
@@ -146,8 +148,8 @@ export class CHMSSportBarChart extends React.Component {
                 </Row>
             </div>
         );
-
     }
+
 }
 
 const CHMSStateExerciseChartConfig = {
@@ -194,6 +196,7 @@ const CHMSStateExerciseChartConfig = {
 };
 
 export class CHMSStateExerciseChart extends React.Component {
+
     render() {
         const callback = () => {
             this.refs.chart.getWrappedInstance().updateChart({
@@ -223,8 +226,8 @@ export class CHMSStateExerciseChart extends React.Component {
                 </Row>
             </div>
         );
-
     }
+
 }
 
 const CHMSSportExerciseChartConfig = {
@@ -271,6 +274,7 @@ const CHMSSportExerciseChartConfig = {
 
 
 export class CHMSSportExerciseChart extends React.Component {
+
     render() {
         const callback = () => {
             this.refs.chart.getWrappedInstance().updateChart({
@@ -301,8 +305,8 @@ export class CHMSSportExerciseChart extends React.Component {
                 </Row>
             </div>
         );
-
     }
+
 }
 
 
@@ -412,6 +416,7 @@ const CHMSNutrientBarChartConfig = {
 };
 
 export class CHMSNutrientBarChart extends React.Component {
+
     render() {
         return (
             <div>
@@ -419,12 +424,12 @@ export class CHMSNutrientBarChart extends React.Component {
                     <Col xs={12}>
                         <CHMSHighchart ref="chart" uid={'nutrient'} apiAddress={null}
                                        initConfig={CHMSNutrientBarChartConfig}
-                                       {...this.props}
+                            {...this.props}
                                        isPureConfig/>
                     </Col>
                 </Row>
             </div>
         );
-
     }
+
 }

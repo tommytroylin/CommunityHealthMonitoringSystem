@@ -17,7 +17,6 @@ class CHMSRollingTwitter extends React.Component {
     }
 
     render() {
-
         return (
             <div>
                 <Well>

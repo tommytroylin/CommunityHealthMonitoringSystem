@@ -3,15 +3,17 @@ import {Button,ButtonGroup} from 'react-bootstrap';
 import _ from 'lodash';
 
 export default class CHMSSelect extends React.Component {
+
     constructor(props) {
         super(props);
         this.getSelectValue = this.getSelectValue.bind(this);
     }
-    getSelectValue(){
-         return this.refs.select.value;
-    }
-    render() {
 
+    getSelectValue() {
+        return this.refs.select.value;
+    }
+
+    render() {
         return (
             <span>
                 <label>{this.props.label}</label>
@@ -21,7 +23,6 @@ export default class CHMSSelect extends React.Component {
                     )}
                 </select>
             </span>
-
         );
     }
 };

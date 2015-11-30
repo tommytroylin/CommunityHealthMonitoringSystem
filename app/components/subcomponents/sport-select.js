@@ -2,8 +2,7 @@ import React from 'react';
 import {Button,ButtonGroup} from 'react-bootstrap';
 import CHMSSelect from '../reuseable/select';
 
-//Change options settings here
-//
+//TODO Change the options here
 const settings = {
     options: [
         {value: 'Basketball',label:'Basketball'},
@@ -20,11 +19,13 @@ const settings = {
 };
 
 export default class CHMSSportSelect extends React.Component {
+
     render() {
         return (
             <CHMSSelect {...this.props} {...settings}/>
         );
     }
+
 };
 
 CHMSSportSelect.propTypes = {

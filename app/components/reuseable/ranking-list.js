@@ -5,13 +5,14 @@
  */
 
 import React from 'react';
-import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { CHMSComponentError, CHMSComponentLoading, CHMSComponentReloadButton } from'./loading-and-error';
+import {Button, ListGroup, ListGroupItem} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {CHMSComponentError, CHMSComponentLoading, CHMSComponentReloadButton} from'./loading-and-error';
 import * as actions from '../../redux/actions/ranking-list';
 import _ from 'lodash';
 
 class CHMSRankingListList extends React.Component {
+
     shouldComponentUpdate(nextProps, nextState) {
         return this.props.listData !== nextProps.listData;
     }
@@ -33,13 +34,14 @@ class CHMSRankingListList extends React.Component {
         return (
             <div>
                 <ListGroup>
-                    {_.map(this.props.listData, (listLable, index)=>
-                        <ListGroupItem key={listLable} bsStyle={handleStyle(index)}>{listLable}</ListGroupItem>
+                    {_.map(this.props.listData, (listLabel, index)=>
+                        <ListGroupItem key={listLabel} bsStyle={handleStyle(index)}>{listLabel}</ListGroupItem>
                     )}
                 </ListGroup>
             </div>
         );
     }
+
 }
 
 class CHMSRankingList extends React.Component {
@@ -49,20 +51,17 @@ class CHMSRankingList extends React.Component {
     }
 
     componentDidMount() {
-            this.props.dispatch(actions.fetchListData(this.props.uid, this.props.apiAddress));
-
+        this.props.dispatch(actions.fetchListData(this.props.uid, this.props.apiAddress));
     }
 
-
     render() {
-
         return (
             <div>
                 <CHMSComponentReloadButton name={this.props.name}
-                                           handleClick={ ()=> this.props.dispatch(actions.fetchListData(this.props.uid,this.props.apiAddress))}/>
-                { this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null }
-                { this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name}/> : null }
-                { this.props.onState === 'DRAWN' ? <CHMSRankingListList listData={this.props.listData}/> : null }
+                                           handleClick={() => this.props.dispatch(actions.fetchListData(this.props.uid,this.props.apiAddress))}/>
+                {this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null}
+                {this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name}/> : null}
+                {this.props.onState === 'DRAWN' ? <CHMSRankingListList listData={this.props.listData}/> : null}
             </div>
         );
     }

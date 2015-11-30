@@ -4,6 +4,7 @@ import ApiAddresses from '../utils/api-address';
 
 
 export class CHMSFoodRankList extends React.Component {
+
     render() {
         return (
             <div>
@@ -12,10 +13,12 @@ export class CHMSFoodRankList extends React.Component {
         );
 
     }
+
 }
 
 
 export class CHMSSportRankList extends React.Component {
+
     render() {
         return (
             <div>
@@ -25,3 +28,6 @@ export class CHMSSportRankList extends React.Component {
 
     }
 }
+
+
+//TODO All ranking lists are here
