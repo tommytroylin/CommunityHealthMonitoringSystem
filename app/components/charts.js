@@ -433,3 +433,71 @@ export class CHMSNutrientBarChart extends React.Component {
     }
 
 }
+
+
+const CHMSProfileFoodChartConfig = {
+
+    chart: {
+        polar: true,
+        type: 'line'
+    },
+
+    title: {
+        text: 'Nutrient Content of Top Two Foods',
+    },
+
+    pane: {
+        size: '80%'
+    },
+
+    xAxis: {
+        categories: ['Water', 'Sugars', 'Protein', 'Fat',
+            'Carbohydrate', 'Fiber'],
+        tickmarkPlacement: 'on',
+        lineWidth: 0
+    },
+
+    yAxis: {
+        gridLineInterpolation: 'polygon',
+        lineWidth: 0,
+        min: 0
+    },
+
+    tooltip: {
+        shared: true,
+        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}%</b><br/>'
+    },
+
+    legend: {
+        align: 'right',
+        verticalAlign: 'top',
+        y: 70,
+        layout: 'vertical'
+    },
+
+    series: []
+
+};
+
+
+export class CHMSProfileFoodChart extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <Row>
+                    <Col xs={12}>
+                        <CHMSHighchart ref="chart" uid={'profileFood'} apiAddress={null}
+                                       initConfig={CHMSProfileFoodChartConfig}
+                            {...this.props}
+                                       isPureConfig/>
+                    </Col>
+                </Row>
+            </div>
+        );
+    }
+
+}
+
+//TODO All charts are here
+
