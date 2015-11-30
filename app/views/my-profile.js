@@ -1,5 +1,7 @@
 import React from 'react';
 import {Panel,Grid,Row,Col} from 'react-bootstrap';
+import {CHMSProfileFoodChart} from '../components/charts';
+import {CHMSProfileSportList} from '../components/ranking-lists';
 
 export default class CHMSMyProfileView extends React.Component {
 
@@ -38,8 +40,8 @@ export default class CHMSMyProfileView extends React.Component {
                             <Panel header={ <h3>Food</h3>}>
                                 <Grid fluid>
                                     <Row>
-                                        <Col xs={12} className="text-center">
-
+                                        <Col xs={12}>
+                                            <CHMSProfileFoodChart />
                                         </Col>
                                     </Row>
                                 </Grid>
@@ -52,8 +54,8 @@ export default class CHMSMyProfileView extends React.Component {
                             <Panel header={ <h3>Sports</h3>}>
                                 <Grid fluid>
                                     <Row>
-                                        <Col xs={12} className="text-center">
-
+                                        <Col xs={12}>
+                                            <CHMSProfileSportList />
                                         </Col>
                                     </Row>
                                 </Grid>
@@ -62,7 +64,6 @@ export default class CHMSMyProfileView extends React.Component {
                     </Row>
                 </Grid>
             </div>
-
         );
     }
 

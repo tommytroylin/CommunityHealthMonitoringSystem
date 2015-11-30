@@ -1,3 +1,4 @@
+//TODO Change api address here
 export default {
     heatMap1: '/mock/heatMap1.json',
     heatMap2: '/mock/heatMap2.json',

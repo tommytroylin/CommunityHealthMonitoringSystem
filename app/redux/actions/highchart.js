@@ -52,9 +52,14 @@ export function fetchDataSucceed(id, chartConfig) {
 
 //Async Action for fetching list data
 export function fetchChartData(id, address, withData) {
+
     return function (dispatch) {
         let options = {};
         if (withData !== undefined) {
+            console.log('Data posted!');
+            console.log(withData);
+            console.log("to");
+            console.log(address);
             options = {
                 method: 'post', //post
                 headers: {
