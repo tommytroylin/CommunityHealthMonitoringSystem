@@ -2,12 +2,12 @@
  * Created by Tommy on 11/24/15.
  */
 import React from 'react';
-
 import StateSelect from '../components/subcomponents/state-select';
 import SportSelect from '../components/subcomponents/sport-select';
 import { CHMSFoodRankList,CHMSSportRankList } from '../components/ranking-lists';
 import { CHMSFoodWebChart,CHMSSportBarChart, CHMSStateExerciseChart,CHMSSportExerciseChart } from '../components/charts';
 import { Grid, Row, Col, Well } from 'react-bootstrap';
+
 export default class CHMSRangkingListView extends React.Component {
 
     render() {

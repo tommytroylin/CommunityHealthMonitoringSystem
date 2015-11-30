@@ -9,7 +9,6 @@ export default class CHMSDeepMiningView extends React.Component {
     render() {
         return (
             <div>
-
                 <Row>
                     <Col xs={12} sm={6}>
                         <h3>3-Cluster</h3>
@@ -22,7 +21,6 @@ export default class CHMSDeepMiningView extends React.Component {
                             <img src={require('../static/obesity_by_county.png')} alt=""
                                  className="img-responsive"/></Well>
                     </Col>
-
                 </Row>
                 <Row>
                     <Col xs={12}>
@@ -30,7 +28,6 @@ export default class CHMSDeepMiningView extends React.Component {
                             <CHMSNutrientBarChart />
                         </Well>
                     </Col>
-
                 </Row>
             </div>
         );

@@ -1,19 +1,20 @@
 import React from 'react';
-import CHMSLogo from '../components/logo'
-import CHMSRollingTwitter from '../components/rolling-twitter'
-import {Well} from 'react-bootstrap'
-import { CHMSHeatMap1,CHMSHeatMap2 } from '../components/heat-maps'
+import CHMSLogo from '../components/logo';
+import CHMSRollingTwitter from '../components/rolling-twitter';
+import CHMSIndexShow from '../components/indexShow';
+import { Grid, Well } from 'react-bootstrap';
+import { CHMSHeatMap1, CHMSHeatMap2 } from '../components/heat-maps';
 import { connect } from 'react-redux';
-import ApiAddresses from '../utils/api-address'
-
+import ApiAddresses from '../utils/api-address';
 
 export default class CHMSHeatMapView extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
             isActive: 1
-        }
-        this.handleClick = this.handleClick.bind(this)
+        };
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(id) {
@@ -23,7 +24,9 @@ export default class CHMSHeatMapView extends React.Component {
     render() {
         const subViews = {1: <CHMSHeatMap1 />, 2: <CHMSHeatMap2 />};
         return (
-            <div className="container-fluid">
+            <Grid fluid>
+                <CHMSIndexShow/>
+                <hr />
                 <CHMSRollingTwitter/>
                 <hr/>
                 <ul className="nav nav-tabs">
@@ -35,10 +38,7 @@ export default class CHMSHeatMapView extends React.Component {
                 <Well>
                     {subViews[this.state.isActive]}
                 </Well>
-
-
-            </div>
-
+            </Grid>
         );
     }
 

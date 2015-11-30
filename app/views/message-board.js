@@ -35,7 +35,8 @@ export default class CHMSMessageBoardView extends React.Component {
                                     <Row>
                                         <Col xs={12}>
                                             <div className="pull-right">
-                                                <Button bsStyle="danger" bsSize="small" onClick={this.reset}>Reset</Button>
+                                                <Button bsStyle="danger" bsSize="small"
+                                                        onClick={this.reset}>Reset</Button>
                                                 <Button bsStyle="success" bsSize="small"
                                                         onClick={()=>this.addMessage("Tommy")}>Post</Button>
                                             </div>
@@ -49,7 +50,6 @@ export default class CHMSMessageBoardView extends React.Component {
                     <MessageBoard ref="messageBoard"/>
                 </Grid>
             </div>
-
         );
     }
 

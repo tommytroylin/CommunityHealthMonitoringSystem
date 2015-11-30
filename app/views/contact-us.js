@@ -53,7 +53,6 @@ export default class CHMSContactUsView extends React.Component {
                 <hr />
                 <Row>
                     <Col xs={12} md={10} mdPush={1} lg={8} lgPush={2}>
-
                         <Panel header={ <h3>Contact Form</h3>}>
                             <form action={apiAddress.contactUsForm} method="post">
                                 <Grid fluid>
@@ -82,12 +81,9 @@ export default class CHMSContactUsView extends React.Component {
                             </form>
                         </Panel>
                     </Col>
-
                 </Row>
             </div>
         );
     }
 
 }
-
-//TODO Change iframe location
