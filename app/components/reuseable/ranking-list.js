@@ -48,17 +48,24 @@ class CHMSRankingList extends React.Component {
 
     constructor(props) {
         super(props);
+        this.updateList = this.updateList.bind(this);
     }
 
     componentDidMount() {
-        this.props.dispatch(actions.fetchListData(this.props.uid, this.props.apiAddress));
+        this.updateList();
+    }
+
+    updateList() {
+        if(this.props.apiAddress !== null) {
+            this.props.dispatch(actions.fetchListData(this.props.uid, this.props.apiAddress));
+        }
     }
 
     render() {
         return (
             <div>
                 <CHMSComponentReloadButton name={this.props.name}
-                                           handleClick={() => this.props.dispatch(actions.fetchListData(this.props.uid,this.props.apiAddress))}/>
+                                           handleClick={this.updateList}/>
                 {this.props.onState === 'FETCHING' ? <CHMSComponentLoading name={this.props.name}/> : null}
                 {this.props.onState === 'ERROR' ? <CHMSComponentError name={this.props.name}/> : null}
                 {this.props.onState === 'DRAWN' ? <CHMSRankingListList listData={this.props.listData}/> : null}
