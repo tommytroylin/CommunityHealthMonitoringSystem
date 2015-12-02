@@ -27,16 +27,6 @@ export default class CHMSHeatMapView extends React.Component {
             <Grid fluid>
                 <CHMSRollingTwitter/>
                 <hr/>
-                <ul className="nav nav-tabs">
-                    <li role="presentation" className={this.state.isActive === 1?'active':null}
-                        onClick={() => this.handleClick(1)}><a>Heat Map 1</a></li>
-                    <li role="presentation" className={this.state.isActive === 2?'active':null}
-                        onClick={() => this.handleClick(2)}><a>Heat Map 2</a></li>
-                </ul>
-                <Well>
-                    {subViews[this.state.isActive]}
-                </Well>
-                <hr />
                 <CHMSIndexShow/>
             </Grid>
         );
