@@ -1,5 +1,7 @@
 import React from 'react';
 import {Grid,Row,Col} from 'react-bootstrap';
+import {CHMSIndexFoodChart} from './charts';
+import {CHMSIndexBarChart} from './charts';
 
 
 export default class CHMSIndexShow extends React.Component {
@@ -23,10 +25,10 @@ export default class CHMSIndexShow extends React.Component {
                 </Row>
                 <hr />
                 <Row>
-                    <Col xs={4} md={3} lg={2} lgPush={1}>
-                        Test2
+                    <Col xs={4} md={5} lg={2} lgPush={1}>
+                        <CHMSIndexFoodChart />
                     </Col>
-                    <Col xs={8} md={8} lg={7}>
+                    <Col xs={8} md={6} lg={7}>
                         <h2 className="">Community Health Monitoring System</h2>
                         <p className="lead">A system which crawls numerous health-relating tweets in order to
                             provide users with a variety of health information around them.</p>
@@ -34,13 +36,13 @@ export default class CHMSIndexShow extends React.Component {
                 </Row>
                 <hr />
                 <Row>
-                    <Col xs={8} md={8} lg={7} lgPush={1}>
+                    <Col xs={8} md={6} lg={7} lgPush={1}>
                         <h2 className="">Community Health Monitoring System</h2>
                         <p className="lead">A system which crawls numerous health-relating tweets in order to
                             provide users with a variety of health information around them.</p>
                     </Col>
-                    <Col xs={4} md={3} lg={2}>
-
+                    <Col xs={4} md={5} lg={2}>
+                        <CHMSIndexBarChart />
                     </Col>
                 </Row>
             </Grid>

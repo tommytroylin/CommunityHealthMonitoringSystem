@@ -25,8 +25,6 @@ export default class CHMSHeatMapView extends React.Component {
         const subViews = {1: <CHMSHeatMap1 />, 2: <CHMSHeatMap2 />};
         return (
             <Grid fluid>
-                <CHMSIndexShow/>
-                <hr />
                 <CHMSRollingTwitter/>
                 <hr/>
                 <ul className="nav nav-tabs">
@@ -38,6 +36,8 @@ export default class CHMSHeatMapView extends React.Component {
                 <Well>
                     {subViews[this.state.isActive]}
                 </Well>
+                <hr />
+                <CHMSIndexShow/>
             </Grid>
         );
     }
