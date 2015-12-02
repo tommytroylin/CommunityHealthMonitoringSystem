@@ -329,7 +329,8 @@ const CHMSNutrientBarChartConfig = {
         categories: [
             "cluster1",
             "cluster2",
-            "cluster3"
+            "cluster3",
+            "cluster4"
         ],
         crosshair: true
     },
@@ -363,7 +364,8 @@ const CHMSNutrientBarChartConfig = {
             "data": [
                 11.33467514,
                 51.80339,
-                37.64861281
+                37.64861281,
+                34.2512
 
             ]
         },
@@ -372,7 +374,8 @@ const CHMSNutrientBarChartConfig = {
             "data": [
                 5.643521682,
                 7.895896226,
-                18.99285237
+                18.99285237,
+                12.13553
 
             ]
         },
@@ -381,7 +384,8 @@ const CHMSNutrientBarChartConfig = {
             "data": [
                 16.83265294,
                 55.76996331,
-                14.41324791
+                14.41324791,
+                22.54111
             ]
         },
         {
@@ -389,7 +393,8 @@ const CHMSNutrientBarChartConfig = {
             "data": [
                 30.07026456,
                 12.07709329,
-                14.50609201
+                14.50609201,
+                186.8177
 
             ]
         },
@@ -398,7 +403,8 @@ const CHMSNutrientBarChartConfig = {
             "data": [
                 41.60963206,
                 75.41879455,
-                53.14436119
+                53.14436119,
+                52.84133
 
 
             ]
@@ -408,7 +414,8 @@ const CHMSNutrientBarChartConfig = {
             "data": [
                 1.856430136,
                 2.021475367,
-                4.741359331
+                4.741359331,
+                3.26794
             ]
         }
     ]

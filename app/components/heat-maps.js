@@ -234,7 +234,7 @@ const CHMSClusteringMapConfig = {
 
     series: [{
         name: 'default',
-        data: $.map(['us-wa', 'us-nm', 'us-ut', 'us-ca', 'us-tn', 'us-id', 'us-az', 'us-wy', 'us-nd', 'us-sd', 'us-ky', 'us-tx', 'us-fl', 'us-ga', 'us-hi', 'us-il', 'us-ar', 'us-mi', 'us-in', 'us-oh', 'us-ny', 'us-vt', 'us-nh', 'us-ma', 'us-ct', 'us-ri', 'us-pa', 'us-nj', 'us-de', 'us-md', 'us-wv', 'us-va', 'us-nc', 'us-tz'], function (code) {
+        data: $.map(['us-wa', 'us-nm', 'us-ut', 'us-ca', 'us-tn', 'us-id', 'us-az', 'us-wy', 'us-nd', 'us-sd', 'us-ky', 'us-tx', 'us-ga', 'us-hi', 'us-il', 'us-ar', 'us-mi', 'us-oh', 'us-ny', 'us-vt', 'us-nh', 'us-ct', 'us-ri', 'us-nj', 'us-de', 'us-md', 'us-wv', 'us-tz'], function (code) {
             return {code: code};
         })
     }, {
@@ -250,6 +250,11 @@ const CHMSClusteringMapConfig = {
     }, {
         name: 'cluster3',
         data: $.map(['us-ak', 'us-ne', 'us-ks', 'us-ia', 'us-mo', 'us-mn'], function (code) {
+            return {code: code};
+        })
+    }, {
+        name: 'cluster4',
+        data: $.map(['us-fl', 'us-nc', 'us-ma', 'us-pa', 'us-va', 'us-nc','us-in'], function (code) {
             return {code: code};
         })
     }]
