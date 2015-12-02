@@ -276,6 +276,82 @@ export class CHMSClusteringMap extends React.Component {
 }
 
 const CHMSSentimentAnalysisMapConfig = {
+    title: {
+        text: 'Heat Map for Sentiment Analysis'
+    },
+
+    subtitle: {
+        text: 'USA',
+        floating: true,
+        align: 'right',
+        y: 50,
+        style: {
+            fontSize: '16px'
+        }
+    },
+
+    loading: {
+        labelStyle: {
+            color: 'white'
+        },
+        style: {
+            backgroundColor: 'gray'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    colorAxis: {
+        min: 0,
+        minColor: '#FF4500',
+        maxColor: '#FFFFE0'
+    },
+
+    mapNavigation: {
+        enabled: true,
+        enableMouseWheelZoom: false,
+        buttonOptions: {
+            verticalAlign: 'bottom'
+        }
+    },
+
+    plotOptions: {
+        map: {
+            states: {
+                hover: {
+                    color: '#EEDD66'
+                }
+            }
+        }
+    },
+
+    series: [{
+        data: [],
+        mapData: mapDataUSAll,
+        joinBy: 'hc-key',
+        name: 'The Amount of Junk Food',
+        states: {
+            hover: {
+                color: '#BADA55'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }, {
+        name: 'Separators',
+        type: 'mapline',
+        data: window.Highcharts.geojson(mapDataUSAll, 'mapline'),
+        color: 'silver',
+        showInLegend: false,
+        enableMouseTracking: false
+    }]
+
 
 };
 
