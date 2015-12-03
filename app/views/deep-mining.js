@@ -3,6 +3,8 @@ import { Grid, Row, Col, Well } from 'react-bootstrap';
 import {CHMSClusteringMap} from '../components/heat-maps';
 import {CHMSNutrientBarChart} from '../components/charts';
 import { CHMSComponentReloadButton} from '../components/reuseable/loading-and-error';
+import { CHMSFoodRankList} from '../components/ranking-lists';
+import { CHMSFoodWebChart } from '../components/charts';
 
 export default class CHMSDeepMiningView extends React.Component {
 
@@ -10,9 +12,15 @@ export default class CHMSDeepMiningView extends React.Component {
         return (
             <div>
                 <Row>
-                    <Col xs={12} sm={6}>
-                        <h3>3-Cluster</h3>
+                    <Col xs={12}>
+                        <h3>4-Cluster</h3>
                         <Well><CHMSClusteringMap/></Well>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} sm={6}>
+                        <h3>Food Nutrient</h3>
+                        <Well><CHMSFoodWebChart /></Well>
                     </Col>
                     <Col xs={12} sm={6}>
                         <h3>Obesity</h3>

@@ -34,10 +34,10 @@ export default class CHMSNavbar extends React.Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <NavItem href="#/">Heat Map</NavItem>
-                        <NavItem href="#/rankingList">Ranking List</NavItem>
-                        <NavItem href="#/deepMining">Food Deep Analysis</NavItem>
-                        <NavItem href="#/sentimentAnalysis">Sentiment Analysis</NavItem>
+                        <NavItem href="#/">Home Page</NavItem>
+                        <NavItem href="#/rankingList">Sport Analysis</NavItem>
+                        <NavItem href="#/deepMining">Food Analysis</NavItem>
+                        <NavItem href="#/sentimentAnalysis">Sentimental Analysis</NavItem>
                         <NavItem href="#/contactUs">Contact Us</NavItem>
                     </Nav>
                     <Nav pullRight>
