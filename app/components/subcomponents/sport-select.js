@@ -20,9 +20,18 @@ const settings = {
 
 export default class CHMSSportSelect extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.getSelectValue = this.getSelectValue.bind(this);
+    }
+
+    getSelectValue() {
+        return this.refs.select.getSelectValue()
+    }
+
     render() {
         return (
-            <CHMSSelect {...this.props} {...settings}/>
+            <CHMSSelect ref="select" {...this.props} {...settings}/>
         );
     }
 
