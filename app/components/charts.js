@@ -299,7 +299,7 @@ export class CHMSSportExerciseChart extends React.Component {
                     <Col xs={12}>
                         <CHMSHighchart ref="chart" uid={'sportExercise'} apiAddress={ApiAddresses.sportExerciseChart}
                                        initConfig={CHMSSportExerciseChartConfig}
-                                       initOptionData={{choice1: 'us-ca',choice2: 'BaseBall',choice3: 'Basketball'}} {...this.props}
+                                       initOptionData={{data:{choice1: 'us-ca',choice2: 'BaseBall',choice3: 'Basketball'}}} {...this.props}
                                        isPureConfig/>
                     </Col>
                 </Row>
