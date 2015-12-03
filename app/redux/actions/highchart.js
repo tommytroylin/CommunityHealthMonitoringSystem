@@ -59,15 +59,20 @@ export function fetchChartData(id, address, withData) {
             console.log('Data posted!');
             console.log(withData);
             console.log("to");
-            console.log(address);
             options = {
                 method: 'post', //post
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/x-www-form-urlencoded"
                 },
-                body: JSON.stringify(withData)
-            }
+                body: function () {
+                    let result = '';
+                    for (let i of Object.keys(withData.data)) {
+                        result += `${i}=${withData.data[i]}&`
+                    }
+                    return result;
+                }()
+            };
+            console.log(options);
         }
         return fetch(address,options)
             .then(fetchUtil.checkHttpStatus) //check if 404
@@ -76,3 +81,5 @@ export function fetchChartData(id, address, withData) {
             .catch(error => dispatch(fetchDataFailed(id, error)));
     }
 }
+
+
