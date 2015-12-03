@@ -516,7 +516,7 @@ const CHMSIndexFoodChartConfig = {
     },
 
     title: {
-        text: 'Nutrient Content of Top Two Foods',
+        text: 'Nutrient Content',
     },
 
     pane: {
@@ -548,9 +548,27 @@ const CHMSIndexFoodChartConfig = {
         layout: 'vertical'
     },
 
-    series: []
-
-};
+    series: [{
+        "name": "Big City",
+        "data": [3424,
+            342,
+            2342,
+            4566,
+            2344,
+            5080
+        ]
+    }, {
+        "name": "Big City",
+        "data": [1424,
+            5655,
+            3243,
+            7786,
+            4553,
+            1123
+        ]
+    }]
+}
+;
 
 export class CHMSIndexFoodChart extends React.Component {
 
@@ -581,7 +599,7 @@ const CHMSIndexBarChartConfig = {
     },
 
     title: {
-        text: 'Nutrient Content',
+        text: 'Exercise Amount',
         x: -80
     },
 
@@ -590,18 +608,13 @@ const CHMSIndexBarChartConfig = {
     },
 
     xAxis: {
-        categories: [
-            "cluster1",
-            "cluster2",
-            "cluster3"
-        ],
         crosshair: true
     },
 
     yAxis: {
         min: 0,
         title: {
-            text: 'Weight(g)'
+            text: 'Amount'
         }
     },
 
@@ -623,57 +636,12 @@ const CHMSIndexBarChartConfig = {
 
     series: [
         {
-            "name": "Fat",
-            "data": [
-                11.33467514,
-                51.80339,
-                37.64861281
-
-            ]
+            "name": "Big City",
+            "data": [3424]
         },
         {
-            "name": "Protein",
-            "data": [
-                5.643521682,
-                7.895896226,
-                18.99285237
-
-            ]
-        },
-        {
-            "name": "Sugar",
-            "data": [
-                16.83265294,
-                55.76996331,
-                14.41324791
-            ]
-        },
-        {
-            "name": "Water",
-            "data": [
-                30.07026456,
-                12.07709329,
-                14.50609201
-
-            ]
-        },
-        {
-            "name": "Carbohydrate",
-            "data": [
-                41.60963206,
-                75.41879455,
-                53.14436119
-
-
-            ]
-        },
-        {
-            "name": "Fiber",
-            "data": [
-                1.856430136,
-                2.021475367,
-                4.741359331
-            ]
+            "name": "Leisure City",
+            "data": [6756]
         }
     ]
 

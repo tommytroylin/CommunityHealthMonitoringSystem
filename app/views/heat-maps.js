@@ -22,7 +22,6 @@ export default class CHMSHeatMapView extends React.Component {
     }
 
     render() {
-        const subViews = {1: <CHMSHeatMap1 />, 2: <CHMSHeatMap2 />};
         return (
             <Grid fluid>
                 <CHMSRollingTwitter/>

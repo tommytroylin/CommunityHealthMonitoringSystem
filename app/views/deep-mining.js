@@ -19,7 +19,7 @@ export default class CHMSDeepMiningView extends React.Component {
                 </Row>
                 <Row>
                     <Col xs={12} sm={6}>
-                        <h3>About food</h3>
+                        <h3>Food Nutrient</h3>
                         <Well><CHMSFoodWebChart /></Well>
                     </Col>
                     <Col xs={12} sm={6}>

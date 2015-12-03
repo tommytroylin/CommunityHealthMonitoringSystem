@@ -233,8 +233,15 @@ const CHMSClusteringMapConfig = {
     },
 
     series: [{
+        name: 'No Data',
+        color: '#ffffff',
+        data: $.map(['us-id', 'us-wy', 'us-nd', 'us-sd', 'us-hi', 'us-vt', 'us-nh', 'us-ct', 'us-ri', 'us-nj', 'us-de', 'us-wv', 'us-tz'], function (code) {
+            return {code: code};
+        })
+    },{
         name: 'default',
-        data: $.map(['us-wa', 'us-nm', 'us-ut', 'us-ca', 'us-tn', 'us-id', 'us-az', 'us-wy', 'us-nd', 'us-sd', 'us-ky', 'us-tx', 'us-ga', 'us-hi', 'us-il', 'us-ar', 'us-mi', 'us-oh', 'us-ny', 'us-vt', 'us-nh', 'us-ct', 'us-ri', 'us-nj', 'us-de', 'us-md', 'us-wv', 'us-tz'], function (code) {
+        color: '#dcdcdc',
+        data: $.map(['us-wa', 'us-nm', 'us-ut', 'us-ca', 'us-tn', 'us-az', 'us-ky', 'us-tx', 'us-ga', 'us-il', 'us-ar', 'us-mi', 'us-oh', 'us-ny', 'us-md'], function (code) {
             return {code: code};
         })
     }, {
