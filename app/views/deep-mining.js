@@ -7,8 +7,30 @@ import { CHMSFoodRankList} from '../components/ranking-lists';
 import { CHMSFoodWebChart } from '../components/charts';
 
 export default class CHMSDeepMiningView extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isActive: 1
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(activate) {
+        this.setState ({
+            isActive: activate
+        });
+    }
 
     render() {
+        const subViews = {
+            1: <img src={require('../static/percent_of obese_adults.jpg')} alt=""
+                    className="img-responsive"/>,
+            2:<img src={require('../static/percent_of_adults_with_diabetes.jpg')} alt=""
+                   className="img-responsive"/>,
+            3:<img src={require('../static/percent_of_adults_with_hypertension.jpg')} alt=""
+                   className="img-responsive"/>
+        };
+
         return (
             <div>
                 <Row>
@@ -24,10 +46,19 @@ export default class CHMSDeepMiningView extends React.Component {
                     </Col>
                     <Col xs={12} sm={6}>
                         <h3>Obesity</h3>
+                        <ul className="nav nav-tabs">
+                            <li role="presentation" className={this.state.isActive === 1?'active':null}
+                                onClick={() => this.handleClick(1)}><a>Heat Map 1</a></li>
+                            <li role="presentation" className={this.state.isActive === 2?'active':null}
+                                onClick={() => this.handleClick(2)}><a>Heat Map 2</a></li>
+                            <li role="presentation" className={this.state.isActive === 3?'active':null}
+                                onClick={() => this.handleClick(3)}><a>Heat Map 3</a></li>
+                        </ul>
                         <Well>
                             <CHMSComponentReloadButton />
-                            <img src={require('../static/obesity_by_county.png')} alt=""
-                                 className="img-responsive"/></Well>
+                            {subViews[this.state.isActive]}
+                        </Well>
+
                     </Col>
                 </Row>
                 <Row>
