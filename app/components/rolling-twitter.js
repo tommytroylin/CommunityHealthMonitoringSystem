@@ -16,11 +16,14 @@ class CHMSRollingTwitter extends React.Component {
         //TODO make it rolling
     }
 
+    componentDidUpdate() {
+        (window.$('#rollingTwitter')).marquee({direction:'up'})
+    }
     render() {
         return (
             <div>
                 <Well>
-                    <div>
+                    <div id="rollingTwitter" direction="up">
                         {_.map(this.props.data, oneTwitter =>
                         <span><b>{oneTwitter}</b><br /></span>
                         )}

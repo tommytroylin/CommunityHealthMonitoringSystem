@@ -29,6 +29,7 @@ module.exports = {
             {from: 'node_modules/highcharts-release/highcharts-more.js', to: 'lib/highcharts-more.js'},
             {from: 'node_modules/highmaps-release/modules/map.js', to: 'lib/map.js'},
             {from: 'node_modules/jquery-knob/dist/jquery.knob.min.js', to: 'lib/jquery.knob.min.js'},
+            {from: 'app/utils/jquery.marquee.js', to: 'lib/jquery.marquee.js'},
         ])
     ]
 };
