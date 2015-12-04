@@ -3,6 +3,7 @@ import {Row, Col, Well} from 'react-bootstrap';
 import {CHMSSentimentAnalysisMap} from '../components/heat-maps';
 import CHMSSentimentScore from '../components/sentiment-score';
 import {CHMSSentimentChart} from '../components/charts';
+import apiAddress from '../utils/api-address';
 
 export default class CHMSSentimentAnalysisView extends React.Component {
 
@@ -17,7 +18,7 @@ export default class CHMSSentimentAnalysisView extends React.Component {
                 <hr/>
                 <Row>
                     <Col xs={12}>
-                        <Well><CHMSSentimentScore /></Well>
+                        <Well><CHMSSentimentScore apiAddress={apiAddress.sentimentScore} /></Well>
                     </Col>
                 </Row>
                 <hr/>

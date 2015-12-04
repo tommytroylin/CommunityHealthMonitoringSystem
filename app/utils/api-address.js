@@ -13,5 +13,7 @@ export default {
     stateExerciseChart: '/mock/stateExerciseChart.json',
     sportExerciseChart:'mock/sportExerciseChart.json',
 
+    sentimentScore:'/mock/sentimentScore.json',
     contactUsForm: '/mock/foodWebChart.json',
+
 };
