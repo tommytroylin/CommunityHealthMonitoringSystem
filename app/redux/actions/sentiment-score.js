@@ -44,10 +44,10 @@ export function fetchScoreData(address, withData) {
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
-                body: `data=${withData}`
+                body: `?data=${withData}`
             };
         }
-        console.log(options);
+        //console.log(options);
         return fetch(address, options)
             .then(fetchUtil.checkHttpStatus)
             .then(fetchUtil.parseJSON)
