@@ -1,6 +1,6 @@
 import React from 'react';
-import {Route,Router,IndexRoute} from 'react-router';
-import CHMSViewContainer from '../components/view'
+import { Route, Router, IndexRoute } from 'react-router';
+import CHMSViewContainer from '../components/view';
 import CHMSHeatMapView from '../views/heat-maps';
 import CHMSContactUsViews from '../views/contact-us';
 import CHMSRankingListView from '../views/ranking-list';
@@ -10,16 +10,16 @@ import CHMSSentimentAnalysisView from '../views/sentiment-analysis';
 import CHMSMyProfileView from '../views/my-profile';
 
 export default (
-    <Router>
-        <Route path="/" component={CHMSViewContainer}>
-            <IndexRoute component={CHMSHeatMapView}/>
-            <Route path="heatMap" component={CHMSHeatMapView}/>
-            <Route path="rankingList" component={CHMSRankingListView}/>
-            <Route path="deepMining" component={CHMSDeepMiningView}/>
-            <Route path="sentimentAnalysis" component={CHMSSentimentAnalysisView}/>
-            <Route path="contactUs" component={CHMSContactUsViews}/>
-            <Route path="messageBoard" component={CHMSMessageBoardView}/>
-            <Route path="myProfile" component={CHMSMyProfileView}/>
-        </Route>
-    </Router>
+  <Router>
+    <Route path="/" component={CHMSViewContainer}>
+      <IndexRoute component={CHMSHeatMapView} />
+      <Route path="heatMap" component={CHMSHeatMapView} />
+      <Route path="rankingList" component={CHMSRankingListView} />
+      <Route path="deepMining" component={CHMSDeepMiningView} />
+      <Route path="sentimentAnalysis" component={CHMSSentimentAnalysisView} />
+      <Route path="contactUs" component={CHMSContactUsViews} />
+      <Route path="messageBoard" component={CHMSMessageBoardView} />
+      <Route path="myProfile" component={CHMSMyProfileView} />
+    </Route>
+  </Router>
 );
